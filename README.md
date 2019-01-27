@@ -3,6 +3,7 @@ an audio-visual live coding performance combining choreographic thinking and alg
 w/ Renick Bell
 
 read more about the project: http://circle.renickbell.net/
+
 video documentation: https://www.youtube.com/watch?v=bFqYRpUbKqs&feature=youtu.be
 audio documentation: https://soundcloud.com/search?q=renick%20bell%20joana%20chicau
 
