@@ -3,19 +3,18 @@
     
 ### Shapes and shaping
     
-> circle can become other geometries; any shape can be made and replace the circle [see css eg.](https://css-tricks.com/the-shapes-of-css/)
+* circle can become other geometries; any shape can be made and replace the circle [see css eg.](https://css-tricks.com/the-shapes-of-css/)
 
-> critique on the circle: "How to think through and withthe constraints of non-circular togetherness?" — 1^
+* critique on the circle: "How to think through and withthe constraints of non-circular togetherness?" — 1^
     * distance from a shared center; constant radius from the middle.
 
-> questions on geometric formations:
+* questions on geometric formations:
     * edges, limits, boundaries;
     * scales;
     
 ---
     
-> relating to circle/  new metaphors conecting the sound and visuals could focus on:
-
+* relating to circle/  new metaphors conecting the sound and visuals could focus on:
     * distances and proximities;
     * other movements (how the sound travels; we can play with measurements system in sound and visual composition — how the absraction of such conventions is felt/ phisically experienced);
     
