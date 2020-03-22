@@ -38,49 +38,33 @@ _more notes on revisising the syntax:__
         * expanding_the_void () — > letter spacing
    
 _notes on workshop:__
+
     * the functions can be use for embodiment exercises;
     * id="text01" +++ on the HTML file can be used as provocations for workshops but perhaps to much for the performance;
     
 
-* vocabulary = { 
+* vocabulary = 
     * "welcome": welcome,        
     * "remove": remove,    
     * "private_circle": private_circle,  — > displays circle + background color;        
     * "public_sphere": public_sphere,    — > displays circle + background transparent;       
     * "spheres": spheres,    — >  now "public_or_private"  — > hides and displays circle      
-    * "breathe_out": breathe_out,  — > scale 4x; — > the number parameter can be changed;
-            
-"breathe_in":breathe_in,   — > scale 1x; — > the number parameter can be changed;
-            
-"breathing":breathing,     — > replaced by continue_breathing () and stop_breathing ()   
-            
-"edge_limits": edge_limits, — > current function colouring array of the circle — > can be made as an option elsewhere — > new idea, eg.: "circle01" and "circle02" two or more circles intersecting.
-            
-"no_edge":no_edge,          — > remove?
-            
-"whole": whole,             — > rethink drop-shadow   
-            
-"vicious_circle": vicious_circle,
-            
-"interrupt": interrupt,
-            
-"centering":centering,     — > skew affect; rethink the name?  = off_balance; 
-            
-"permeable_language": permeable_language, — > sets a pattern to the backgound — maybe we can start working more in "layers" of background and foreground and add an opacity function to the iframe;
-            
-//"chance_dance": chance_dance, — > choose randomly a function;
-            
-//"from_orbit_to_orbit": from_orbit_to_orbit, — > could we build the array during the performance — as a trace / history of the pages accessed
-            
-"gesto_ciclico": gesto_ciclico, — > opens pop-up windows;
-            
-"another_vicious_circle": another_vicious_circle, — > closes pop-up windows;
-            
-"interrupt_another_vicious_circle": interrupt_another_vicious_circle,
-            
-"offstage": offstage
-
-} 
+    * "breathe_out": breathe_out,  — > scale 4x; — > the number parameter can be changed;          
+    * "breathe_in":breathe_in,   — > scale 1x; — > the number parameter can be changed;           
+    * "breathing":breathing,     — > replaced by continue_breathing () and stop_breathing ()              
+    * "edge_limits": edge_limits, — > current function colouring array of the circle — > can be made as an option elsewhere — > new idea, eg.: "circle01" and "circle02" two or more circles intersecting.         
+    * "no_edge":no_edge,          — > remove?           
+    * "whole": whole,             — > rethink drop-shadow            
+    * "vicious_circle": vicious_circle,         
+    * "interrupt": interrupt,        
+    * "centering":centering,     — > skew affect; rethink the name?  = off_balance;           
+    * "permeable_language": permeable_language, — > sets a pattern to the backgound — maybe we can start working more in "layers" of background and foreground and add an opacity function to the iframe;           
+    * //"chance_dance": chance_dance, — > choose randomly a function;        
+    * //"from_orbit_to_orbit": from_orbit_to_orbit, — > could we build the array during the performance — as a trace / history of the pages accessed     
+    * "gesto_ciclico": gesto_ciclico, — > opens pop-up windows;        
+    * "another_vicious_circle": another_vicious_circle, — > closes pop-up windows;     
+    * "interrupt_another_vicious_circle": interrupt_another_vicious_circle,          
+    * "offstage": offstage
 
 - - -
 
