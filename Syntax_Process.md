@@ -1,6 +1,3 @@
-    
-    
-    
 ### Shapes and shaping
     
 * circle can become other geometries; any shape can be made and replace the circle [see css eg.](https://css-tricks.com/the-shapes-of-css/)
@@ -24,6 +21,9 @@ _on sequence / dramaturgy:_
 * focus on interactions instead of individual coding of sound and visuals;
 * sequence *1* same as shared vocuabulary; *2* "dancers" disrupt the sequence.
 * main structure: do we keep circle + half?
+* improvisation qualities: 
+    * search path; w/ content; 
+    * how else in coding?
 
 --- 
 
