@@ -20,7 +20,7 @@
     
 --- 
 
-_more notes on revisising the syntax:__
+_more notes on revisising the syntax:
 
 * colouring array of the circle (used to be function edge_limits) can be made as an option;
     
@@ -62,7 +62,7 @@ _more notes on revisising the syntax:__
 
 ---
 
-_notes on workshop:__
+_notes on workshop:
     * the functions can be use for embodiment exercises;
     * id="text01" +++ on the HTML file can be used as provocations for workshops but perhaps to much for the performance;
     
