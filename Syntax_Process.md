@@ -38,10 +38,13 @@ _more notes on revisising the syntax:__
         * expanding_the_void () — > letter spacing
    
 _notes on workshop:__
+
     * the functions can be use for embodiment exercises;
     * id="text01" +++ on the HTML file can be used as provocations for workshops but perhaps to much for the performance;
     
-vocabulary = { 
+    
+    
+    vocabulary = { 
 
     "welcome": welcome, 
             
@@ -87,6 +90,7 @@ vocabulary = {
 
 } 
 
+- - -
 
 ### New References:
 
