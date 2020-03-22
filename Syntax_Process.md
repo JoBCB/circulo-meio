@@ -19,6 +19,13 @@
     * other movements (how the sound travels; we can play with measurements system in sound and visual composition — how the absraction of such conventions is felt/ phisically experienced);
     
 --- 
+_on sequence / dramaturgy:_
+
+* focus on interactions instead of individual coding of sound and visuals;
+* sequence *1* same as shared vocuabulary; *2* "dancers" disrupt the sequence.
+* main structure: do we keep circle + half?
+
+--- 
 
 _more notes on revisising the syntax:_
 
