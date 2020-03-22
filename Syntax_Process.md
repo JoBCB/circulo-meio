@@ -40,6 +40,7 @@ _more notes on revisising the syntax:__
 _notes on workshop:__
 
     * the functions can be use for embodiment exercises;
+    
     * id="text01" +++ on the HTML file can be used as provocations for workshops but perhaps to much for the performance;
     
 
