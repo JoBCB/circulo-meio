@@ -12,14 +12,14 @@
     * edges, limits, boundaries;
     * scales;
     
-- - -
+---
     
-* relating to circle/  new metaphors conecting the sound and visuals could focus on:
+> relating to circle/  new metaphors conecting the sound and visuals could focus on:
 
     * distances and proximities;
     * other movements (how the sound travels; we can play with measurements system in sound and visual composition — how the absraction of such conventions is felt/ phisically experienced);
     
-- - - 
+--- 
 
 _more notes on revisising the syntax:__
 
@@ -36,10 +36,6 @@ _more notes on revisising the syntax:__
         * periphery () radial_grammar() tangent () drop() — > display hidden id="text01";
         * perimeter () circumscribed () dissolving () — > background styling as permeable_language () 
         * expanding_the_void () — > letter spacing
-   
-_notes on workshop:__
-    * the functions can be use for embodiment exercises;
-    * id="text01" +++ on the HTML file can be used as provocations for workshops but perhaps to much for the performance;
     
 
 * vocabulary = 
@@ -65,8 +61,13 @@ _notes on workshop:__
     * "interrupt_another_vicious_circle": interrupt_another_vicious_circle,          
     * "offstage": offstage
 
-- - -
+---
 
+_notes on workshop:__
+    * the functions can be use for embodiment exercises;
+    * id="text01" +++ on the HTML file can be used as provocations for workshops but perhaps to much for the performance;
+---   
+   
 ### New References:
 
 1. "Circles are omnipresent in practices and imaginaries of collectivity. However, their usefulness for thinking and moving with the kind of aspirational ambivalence that the Study Circle was committed to, is limited. Their flatness provides little in the way of vocabulary for more complex relational notions that attempt to include space, matter and time, let alone interspecies mingling and other uneasy alliances. The obligation to always stay at the same distance from the center promises a situation of equality but does so by conflating it with similarity. Circles divide spaces into an interior and an exterior, a binary separation that is never easy to overcome. We urgently need other axis to move along." (Femke Snelting, March 2019 — published at Transmediale Journal)[https://possiblebodies.constantvzw.org/geometries/othergeometries.pdf]
