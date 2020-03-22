@@ -5,16 +5,17 @@
     
 > circle can become other geometries; any shape can be made and replace the circle [see css eg.](https://css-tricks.com/the-shapes-of-css/)
     
-      > relating to circle:
-          > private_circle () — > shape background color;
-          > public_sphere () — > shape background transparent;
-          > public_or_private () — > hides and displays shape;
+* relating to circle:
+    * private_circle () — > shape background color;
+    * public_sphere () — > shape background transparent;
+    * public_or_private () — > hides and displays shape;
           
-          > breathe_in() — > scale 1x;
-          > breathe_out() — > scale 4x; — > the number parameter can be changed;
-          
-     
+    * breathe_in() — > scale 1x;
+    * breathe_out() — > scale 4x; — > the number parameter can be changed;
     
+    * continue_breathing ()
+    * stop_breathing ()
+         
     - - - 
   
     vocabulary = { 
