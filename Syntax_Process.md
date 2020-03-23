@@ -1,4 +1,23 @@
-### Shapes and shaping
+
+### Main Structure
+
+* action operators (add + / remove - / modify ~) + vocabulary (parameters) + output device / target system;
+    * each vocabulary represents a multi-parameter state; 
+    * actions: search; click; scraping; open and closing windows; hide; show; scale; skew; layering; rotate; process arrays; randomness and control computational agents; other styling;
+    * controling from the terminal; 
+        * various combinations/ arrangements of windws: we can use two terminals and one browser;
+    * network performance: becomes more accessible for multiple outputs; inclusive for more participants and flexible for performance set up;
+    
+* messaging operator (<>) that means sending a message;
+    * for remote performance we may want to send comments to each other; we can also receive messages from autonomous agents;
+    
+* operator for controling interfaces: 
+    * for example opens and closes windows from browser/ visuals and sound/..
+
+- - 
+we may need: more computers or raspberry pies;
+
+### Shapes and Shaping
     
 * circle can become other geometries; any shape can be made and replace the circle [see css eg.](https://css-tricks.com/the-shapes-of-css/)
 
@@ -23,11 +42,15 @@ _on sequence / dramaturgy:_
 * main structure: do we keep circle + half?
 * improvisation qualities: 
     * search path; w/ content; 
-    * how else in coding?
+    * how else in coding? from a system perspective it should be possible to improvise anytime;
 
 --- 
 
 _more notes on revisising the syntax:_
+
+* we aim at staying close to standard javascript;
+
+* each vocabulary action should suggest a set of elements that have situated names and meanings;
 
 * colouring array of the circle (used to be function edge_limits) can be made as an option;
     
@@ -42,7 +65,10 @@ _more notes on revisising the syntax:_
         * periphery () radial_grammar() tangent () drop() — > display hidden id="text01";
         * perimeter () circumscribed () dissolving () — > background styling as permeable_language () 
         * expanding_the_void () — > letter spacing
-    
+
+* json array?
+* what does it mean to send an URL to the sound system?
+* what if the functions are meaningless; we show error messages? should the system take all the data and try to interpret or ignore it? (each vocabulary has to be prepared to interpret an arbitrary array of data which may be of mixed type);
 
 * vocabulary = 
     * "welcome": welcome,        
@@ -52,17 +78,17 @@ _more notes on revisising the syntax:_
     * "spheres": spheres,    — >  now "public_or_private"  — > hides and displays circle      
     * "breathe_out": breathe_out,  — > scale 4x; — > the number parameter can be changed;          
     * "breathe_in":breathe_in,   — > scale 1x; — > the number parameter can be changed;           
-    * "breathing":breathing,     — > replaced by continue_breathing () and stop_breathing ()              
-    * "edge_limits": edge_limits, — > current function colouring array of the circle — > can be made as an option elsewhere — > new idea, eg.: "circle01" and "circle02" two or more circles intersecting.         
+    * "breathing":breathing,     — > replaced by continue_breathing () and stop_breathing ()  — > should this be mapped to multiple elements for eg.: the circle and the body of the document; whats the representation of body and circle on the sound or light system?            
+    * "edge_limits": edge_limits, — > * current function colouring array of the circle — > can be made as an option elsewhere — > new idea, eg.: "circle01" and "circle02" two or more circles intersecting.         
     * "no_edge":no_edge,          — > remove?           
     * "whole": whole,             — > rethink drop-shadow            
     * "vicious_circle": vicious_circle,         
     * "interrupt": interrupt,        
-    * "centering":centering,     — > skew affect; rethink the name?  = off_balance;           
+    * "centering":centering,     — > * skew affect; rethink the name?  = off_balance;           
     * "permeable_language": permeable_language, — > sets a pattern to the backgound — maybe we can start working more in "layers" of background and foreground and add an opacity function to the iframe;           
     * //"chance_dance": chance_dance, — > choose randomly a function;        
     * //"from_orbit_to_orbit": from_orbit_to_orbit, — > could we build the array during the performance — as a trace / history of the pages accessed     
-    * "gesto_ciclico": gesto_ciclico, — > opens pop-up windows;        
+    * "gesto_ciclico": gesto_ciclico, — > opens pop-up windows;  maybe the new parameters can be to open 5 windows (is there a limit?); width; height; x; y;     
     * "another_vicious_circle": another_vicious_circle, — > closes pop-up windows;     
     * "interrupt_another_vicious_circle": interrupt_another_vicious_circle,          
     * "offstage": offstage
