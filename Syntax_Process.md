@@ -5,8 +5,12 @@
     * each vocabulary represents a multi-parameter state; 
     * actions: search; click; scraping; open and closing windows; hide; show; scale; skew; layering; rotate; process arrays; randomness and control computational agents; other styling;
     * controling from the terminal; 
-        * various combinations/ arrangements of windws: we can use two terminals and one browser;
-    * network performance: becomes more accessible for multiple outputs; inclusive for more participants and flexible for performance set up;
+      * various combinations/ arrangements of windws: we can use two terminals or more and one browser;
+    * network performance: 
+      * becomes more accessible for multiple outputs; 
+      * inclusive for more participants;
+      * flexible for performance set up;
+    * how to map to different outputs?
     
 * messaging operator (<>) that means sending a message;
     * for remote performance we may want to send comments to each other; we can also receive messages from autonomous agents;
@@ -14,8 +18,7 @@
 * operator for controling interfaces: 
     * for example opens and closes windows from browser/ visuals and sound/..
 
-- - 
-we may need: more computers or raspberry pies;
+* we may need: more computers or raspberry pies;
 
 ### Shapes and Shaping
     
@@ -48,9 +51,11 @@ _on sequence / dramaturgy:_
 
 _more notes on revisising the syntax:_
 
-* we aim at staying close to standard javascript;
+* we aim at staying close to standard javascript; agents should only exist where there is javascript.
 
 * each vocabulary action should suggest a set of elements that have situated names and meanings;
+
+* vocubulary can be renamed on the fly; 
 
 * colouring array of the circle (used to be function edge_limits) can be made as an option;
     
