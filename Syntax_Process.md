@@ -103,7 +103,8 @@ _more notes on revisising the syntax:_
       * can merge with "another_vicious_circle"    
     * "interrupt": interrupt,    
       * can merge with interrupt_another_vicious_circle";
-    * "centering":centering,     — > * skew affect; rethink the name?  = off_balance;           
+    * "centering":centering, 
+      * skew affect; rethink the name?  = off_balance;           
     * "permeable_language": permeable_language, 
       * sets a pattern to the backgound — maybe we can start working more in "layers" of background and foreground and add an opacity function to the iframe;           
     * //"chance_dance": chance_dance, 
