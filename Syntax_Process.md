@@ -1,6 +1,6 @@
 ### TODO
 
-* 1. connect interfaces: 
+* Connect interfaces: 
       * 1.1 replicate haskell < — > browser in JS/Node (terminal < — > browser/html);
       * 1.2 scheduler (players and dancer are in sync);
       * 1.3 create operators and make more general functions;
