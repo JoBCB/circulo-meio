@@ -1,10 +1,10 @@
 ### TODO
 
-1. connect interfaces: 
-   1.1 replicate haskell < — > browser in JS/Node (terminal < — > browser/html);
-   1.2 scheduler (players and dancer are in sync);
-   1.3 create operators and make more general functions;
-   1.4 load vocabulary from one's node sessions into web browser;
+* 1. connect interfaces: 
+      * 1.1 replicate haskell < — > browser in JS/Node (terminal < — > browser/html);
+      * 1.2 scheduler (players and dancer are in sync);
+      * 1.3 create operators and make more general functions;
+      * 1.4 load vocabulary from one's node sessions into web browser;
    
 
 ### Main Structure
