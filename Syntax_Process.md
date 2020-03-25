@@ -2,6 +2,8 @@
 
 * 1. Connect interfaces: 
       * 1.1 replicate haskell < — > browser in JS/Node (terminal < — > browser/html);
+          * open two terminal and start node;
+          * interpret node session;
       * 1.2 scheduler (players and dancer are in sync);
       * 1.3 create operators and make more general functions;
       * 1.4 load vocabulary from one's node sessions into web browser;
