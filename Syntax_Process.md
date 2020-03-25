@@ -1,3 +1,11 @@
+### TODO
+
+1. connect interfaces: 
+   1.1 replicate haskell < — > browser in JS/Node (terminal < — > browser/html);
+   1.2 scheduler (players and dancer are in sync);
+   1.3 create operators and make more general functions;
+   1.4 load vocabulary from one's node sessions into web browser;
+   
 
 ### Main Structure
 
@@ -13,6 +21,12 @@
       * flexible for performance set up;
     * how to map to different outputs?
       * for eg. visuals, sounds, lights, robots..
+      
+* an operator to display the vocabulary (dictionary) that has been built until then:
+   * vocabulary dictionary exists in each performer's machine, and changes to vocabulary in one place are propagated to all of the performers;
+   * feedback into a source file that is shared by all participants;
+   *
+   * where do the computational agents live? how can computational agents be present? where are they present?
     
 * messaging operator (<>) that means sending a message;
     * for remote performance we may want to send comments to each other; we can also receive messages from autonomous agents;
@@ -32,7 +46,12 @@
 * questions on geometric formations:
     * edges, limits, boundaries;
     * scales;
-    
+  
+* questions on sound:
+   * web audio not advanced enough but we can have a small set of functions to work with;
+      * try to develop some simple audio synthesis functions for workshops
+   * sound triggering midi;
+
 ---
     
 * relating to circle/  new metaphors conecting the sound and visuals could focus on:
@@ -52,6 +71,8 @@ _on sequence / dramaturgy:_
 --- 
 
 _more notes on revisising the syntax:_
+
+* each vocabulary action should suggest a set of elements that have situated names and meanings
 
 * we aim at staying close to standard javascript; agents should only exist where there is javascript.
 
@@ -74,6 +95,7 @@ _more notes on revisising the syntax:_
         * expanding_the_void () — > letter spacing
 
 * json array?
+* eval function is not seucre at the moment;
 * what does it mean to send an URL to the sound system?
 * what if the functions are meaningless; we show error messages? should the system take all the data and try to interpret or ignore it? (each vocabulary has to be prepared to interpret an arbitrary array of data which may be of mixed type);
 * as a reference see [p5js](https://p5js.org/reference/)
