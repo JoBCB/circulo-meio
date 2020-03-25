@@ -7,10 +7,12 @@
     * controling from the terminal; 
       * various combinations/ arrangements of windws: we can use two terminals or more and one browser;
     * network performance: 
+      * could we have a shared editor like in PixelJam?
       * becomes more accessible for multiple outputs; 
       * inclusive for more participants;
       * flexible for performance set up;
     * how to map to different outputs?
+      * for eg. visuals, sounds, lights, robots..
     
 * messaging operator (<>) that means sending a message;
     * for remote performance we may want to send comments to each other; we can also receive messages from autonomous agents;
