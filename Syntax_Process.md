@@ -14,6 +14,12 @@
 * action operators (add + / remove - / modify ~) + vocabulary (parameters) + output device / target system;
     * each vocabulary represents a multi-parameter state; 
     * actions: search; click; scraping; open and closing windows; hide; show; scale; skew; layering; rotate; process arrays; randomness and control computational agents; other styling;
+    * eg.: 
+          > const g = require('geometries.js')
+          > g.oP('browser2','dancer1') 
+      * oa (oAdd) or (oRemove) om (oModify) / oP (o Pergunta/Question)
+      * we can also give name to the browsers;
+    
     * controling from the terminal; 
       * various combinations/ arrangements of windws: we can use two terminals or more and one browser;
     * network performance: 
