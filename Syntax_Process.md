@@ -33,7 +33,6 @@
 * an operator to display the vocabulary (dictionary) that has been built until then:
    * vocabulary dictionary exists in each performer's machine, and changes to vocabulary in one place are propagated to all of the performers;
    * feedback into a source file that is shared by all participants;
-   *
    * where do the computational agents live? how can computational agents be present? where are they present?
     
 * messaging operator (<>) that means sending a message;
@@ -75,6 +74,16 @@ _on sequence / dramaturgy:_
 * improvisation qualities: 
     * search path; w/ content; 
     * how else in coding? from a system perspective it should be possible to improvise anytime;
+
+* scraping mechanism / general scraping tool;
+     * scrape > save > open in HTML;
+          * browser will be displaying webpage served by NODE;
+          * within NODE we will be dynamically displaying a webapge being built live;
+     * mesh up of webpages live; 
+     * dynamic webpage: eg.: 3 columns layout;
+          * data collected locally;
+          * data collected to a central file (ideal);
+          * data collected locally + send it to others;
 
 --- 
 
