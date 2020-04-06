@@ -82,7 +82,7 @@ _on sequence / dramaturgy:_
      * mesh up of webpages live; 
      * dynamic webpage: eg.: 3 columns layout;
           * data collected locally;
-          * data collected to a central file (ideal);
+          * data collected to a central file (ideal) — — — > content pool;
           * data collected locally + send it to others;
 
 --- 
