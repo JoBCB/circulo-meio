@@ -4,10 +4,15 @@
       * 1.1 replicate haskell < — > browser in JS/Node (terminal < — > browser/html);
           * open two terminal and start node;
           * interpret node session;
-      * 1.2 scheduler (players and dancer are in sync);
-      * 1.3 create operators and make more general functions;
-      * 1.4 load vocabulary from one's node sessions into web browser;
-   
+      * 1.2 create operators and make more general functions;
+          * Renick: (1) performer side code; (2) parse messages;
+          * Joana: browser output target/ side mapping;
+      * 1.3 load vocabulary from one's node sessions into web browser;
+
+* 2. Adapting audio:
+     * 2.1 mapping library to translate from OSC to a node server;
+     * 2.2 scheduler (players and dancer are in sync);
+
 
 ### Main Structure
 
