@@ -8,7 +8,8 @@
           * Renick: (1) performer side code: client to browser; (2) parse messages;
           * Joana: browser output target/ side mapping;
       * 1.3 load vocabulary from one's node sessions into web browser;
-
+          * plus streaming side;
+          
 * 2. Adapting audio:
      * 2.1 mapping library to translate from OSC to a node server;
      * 2.2 scheduler (players and dancer are in sync);
