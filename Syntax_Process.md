@@ -14,7 +14,7 @@
      * 2.2 scheduler (players and dancer are in sync);
 
 * 3. Web RTC and web sockets;
-          * plus streaming sound;
+     * plus streaming sound;
 
 ### Main Structure
 
