@@ -13,6 +13,7 @@
      * 2.1 mapping library to translate from OSC to a node server;
      * 2.2 scheduler (players and dancer are in sync);
 
+* 3. Web RTC and web sockets;
 
 ### Main Structure
 
