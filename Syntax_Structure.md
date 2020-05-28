@@ -135,11 +135,11 @@ _notes:_
 
 - - - 
 
-### examples
+### EXAMPLES
 
 __public_or_private()__
 
-__performative intention:__ _presence and absence; hiding and showing_ 
+__performative intention:__ _presence and absence; hiding and showing;_ 
 
 __possible elements:__ _display; size; opacity; color; z-index order;_
 
@@ -161,64 +161,66 @@ _more functions_
 
 * __breathe()__
 
-__performative intention:__ _setting a rhythm; pulsating_
+_performative intention:_ setting a rhythm; pulsating;
 
-__connected to:__ _setInterval; animation keyframes;_
+_connected to:_ setInterval; animation keyframes;
 
 
 * __edge_limits() perimeter() circumscribed() permeable_language() dissolving()__
 
-__performative intention:__ _blending, merging_
+_performative intention:_ blending, merging;
 
-__possible elements:__ _blur; background and foreground colours; gradients; opacity_
+_possible elements:_ blur; background and foreground colours; gradients; opacity;
 
 
 * __expanding_the_void() whole()__
 
-__performative intention:__ _spacing, position_
+_performative intention:_ spacing, position;
 
 
 * __centering() balancing()__
 
-__performative intention:__ _distort; de-harmonize_ 
+_performative intention:_ distort; de-harmonize;
 
-__possible elements:__ _align; skew_
+_possible elements: align;_ skew;
 
 
 * __circulation_of_affects () from_orbit_to_orbit()__
 
-__performative intention:__ _moving; intersecting_
+_performative intention:_ moving; intersecting;
 
 
 * __gesto_ciclico () vicious_circle()__
 
-__performative intention:__ _repetition;_ 
+_performative intention:_ repetition;
+
+_possible elements:_ repeat; setInterval;
 
 
 * __or_rupture()__ 
 
-__performative intention:__ _interrupt;_ 
+_performative intention:_ interrupt;
 
-__possible elements:__ _pause; stop;_
+_possible elements:_ pause; stop;
 
 
 * __chance_dance()__
 
-__performative intention:__ _re-ordering; unexpected sequencing_
+_performative intention:_ re-ordering; unexpected sequencing;
 
-__possible elements:__ _random;_
+_possible elements:_ random;
 
 
 * __offstage ()__
 
-__performative intention:__ _end of the piece__ 
+_performative intention:_ end of the piece; 
 
-__possible elements:__ _body.innerHTML = ''; background and foreground colours; opacity__
+_possible elements:_ body.innerHTML = ''; background and foreground colours; opacity
 
 
 
 * __move_to_act()__
 
-__performative intention:__ _choose vocabularies from dictionary_
+_performative intention:_ choose vocabularies from dictionary;
 
-__possible elements:__ _return (vocabulary[word])();_
+_possible elements:_ return (vocabulary[word])();
