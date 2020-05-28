@@ -139,86 +139,86 @@ _notes:_
 
 __public_or_private()__
 
-_performative intention: presence and absence; hiding and showing_ 
+__performative intention:__ _presence and absence; hiding and showing_ 
 
-_possible elements: display; size; opacity; color; z-index order;_
+__possible elements:__ _display; size; opacity; color; z-index order;_
 
-dancer01 =  document.querySelector("#circle")
+> dancer01 =  document.querySelector("#circle")
 
-function public_or_private ([color,size]) { 
+> function public_or_private ([color,size]) { 
     if (dancer01.style.display=="none") 
     { (dancer01.style.display="inline") } 
     else { (dancer01.style.display="none") };
     dancer01.style.backgroundColor=color;
     dancer01.style.transform=`scale(${size})`   
-}
+ }
 
-public_or_private (["blue", "2"])
+> public_or_private (["blue", "2"])
 
 
 
 _more functions_
 
-__breathe()__
+* __breathe()__
 
-_performative intention: setting a rhythm; pulsating__ 
+__performative intention:__ _setting a rhythm; pulsating_
 
-__connected to: setInterval; animation keyframes;_
-
-
-__edge_limits() perimeter() circumscribed() permeable_language() dissolving()__
-
-_performative intention: blending, merging__ 
-
-_possible elements: blur; background and foreground colours; gradients; opacity__
+__connected to:__ _setInterval; animation keyframes;_
 
 
-__expanding_the_void() whole()__
+* __edge_limits() perimeter() circumscribed() permeable_language() dissolving()__
 
-_performative intention: spacing, position__ 
+__performative intention:__ _blending, merging_
 
-
-__centering() balancing()__
-
-_performative intention: distort; de-harmonize__ 
-
-_possible elements: align; skew__
+__possible elements:__ _blur; background and foreground colours; gradients; opacity_
 
 
-__circulation_of_affects () from_orbit_to_orbit()__
+* __expanding_the_void() whole()__
 
-_performative intention: moving; intersecting__ 
-
-
-__gesto_ciclico () vicious_circle()__
-
-_performative intention: repetition__ 
+__performative intention:__ _spacing, position_
 
 
-__or_rupture()__ 
+* __centering() balancing()__
 
-_performative intention: interrupt;_ 
+__performative intention:__ _distort; de-harmonize_ 
 
-_possible elements: pause; stop;__
-
-
-__chance_dance()__
-
-_performative intention: re-ordering; unexpected sequencing__ 
-
-_possible elements: random;__
+__possible elements:__ _align; skew_
 
 
-__offstage ()__
+* __circulation_of_affects () from_orbit_to_orbit()__
 
-_performative intention: end of the piece__ 
-
-_possible elements: body.innerHTML = ''; background and foreground colours; opacity__
+__performative intention:__ _moving; intersecting_
 
 
+* __gesto_ciclico () vicious_circle()__
 
-__move_to_act()__
+__performative intention:__ _repetition;_ 
 
-_performative intention: choose vocabularies from dictionary__ 
 
-_possible elements: return (vocabulary[word])();__
+* __or_rupture()__ 
+
+__performative intention:__ _interrupt;_ 
+
+__possible elements:__ _pause; stop;_
+
+
+* __chance_dance()__
+
+__performative intention:__ _re-ordering; unexpected sequencing_
+
+__possible elements:__ _random;_
+
+
+* __offstage ()__
+
+__performative intention:__ _end of the piece__ 
+
+__possible elements:__ _body.innerHTML = ''; background and foreground colours; opacity__
+
+
+
+* __move_to_act()__
+
+__performative intention:__ _choose vocabularies from dictionary_
+
+__possible elements:__ _return (vocabulary[word])();_
