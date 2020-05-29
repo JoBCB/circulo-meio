@@ -16,6 +16,10 @@
 * 3. Web RTC and web sockets;
      * plus streaming sound;
 
+* 4. Interface for performance:
+     * how to display the text from webconsole on the webpage;
+    
+
 ### Main Structure
 
 * action operators (add + / remove - / modify ~) + vocabulary (parameters) + output device / target system;
