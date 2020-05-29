@@ -144,7 +144,8 @@ __performative intention:__ _presence and absence; hiding and showing;_
 __possible elements:__ _display; size; opacity; color; z-index order;_
 
 > dancer01 = > function vocabulary;
-> prop01 =  document.querySelector("#circle")
+
+> prop01 =  document.querySelector("#circle");
 
 > function public_or_private ([color,size]) { 
     if (prop01.style.display=="none") 
