@@ -143,14 +143,15 @@ __performative intention:__ _presence and absence; hiding and showing;_
 
 __possible elements:__ _display; size; opacity; color; z-index order;_
 
-> dancer01 =  document.querySelector("#circle")
+> dancer01 = > function vocabulary;
+> prop01 =  document.querySelector("#circle")
 
 > function public_or_private ([color,size]) { 
-    if (dancer01.style.display=="none") 
-    { (dancer01.style.display="inline") } 
-    else { (dancer01.style.display="none") };
-    dancer01.style.backgroundColor=color;
-    dancer01.style.transform=`scale(${size})`   
+    if (prop01.style.display=="none") 
+    { (prop01.style.display="inline") } 
+    else { (prop01.style.display="none") };
+    prop01.style.backgroundColor=color;
+    prop01.style.transform=`scale(${size})`   
  }
 
 > public_or_private (["blue", "2"])
