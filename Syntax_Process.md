@@ -175,6 +175,7 @@ _notes on webaudio resources:_
 * https://tonejs.github.io/
 * https://flowhub.io/
 * https://p5js.org/reference/#/libraries/p5.sound
+* https://www.websynths.org/
 * https://mimicproject.com/about
 * https://github.com/sebpiq/WebPd
 * https://github.com/sebpiq/rhizome
