@@ -170,7 +170,16 @@ _more notes on revisising the syntax:_
     * "offstage": offstage
 
 ---
+_notes on webaudio resources:_
 
+* https://tonejs.github.io/
+* https://flowhub.io/
+* https://p5js.org/reference/#/libraries/p5.sound
+* https://mimicproject.com/about
+* https://github.com/sebpiq/WebPd
+* https://github.com/sebpiq/rhizome
+
+---
 _notes on workshop:_
 
 * the functions can be use for embodiment exercises;
