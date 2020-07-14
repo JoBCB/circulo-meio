@@ -147,6 +147,7 @@ _or_
   
     * circle.className += 'hide';
     * circle.classList.add('fg-blue', 'show');
+    * document.getElementByID('circle').style.animation="move 4s linear infinite";
     
   * hide an element  
   
