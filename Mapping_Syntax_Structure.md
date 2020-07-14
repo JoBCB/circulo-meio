@@ -175,11 +175,11 @@ _or_
     
   * write text into div:
   
-    * var theDiv = document.getElementById("<ID_OF_THE_DIV>"); var content = document.createTextNode("<YOUR_CONTENT>"); theDiv.appendChild(content);
+   * var theDiv = document.getElementById("<ID_OF_THE_DIV>"); var content = document.createTextNode("<YOUR_CONTENT>"); theDiv.appendChild(content);
 
 _or_
 
-    * var theDiv = document.getElementById("<ID_OF_THE_DIV>"); theDiv.innerHTML += "<YOUR_CONTENT>"; 
+   * var theDiv = document.getElementById("<ID_OF_THE_DIV>"); theDiv.innerHTML += "<YOUR_CONTENT>"; 
   
   
 ## browser actions:
