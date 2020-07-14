@@ -109,15 +109,78 @@
   * initial;
   
 ## other actions JS
+
+const circle = document.querySelector('.circle');
+
+  * print existing classes
+    * console.log(circle.className); 
+    * console.log(circle.classList);
+    
+  * get first class name
+    * console.log(pizza.classList[0]); // hot
+
+  * get total number of classes
+    * console.log(circle.classList.length); // 3
+
   * remove class;
+    * circle.classList.remove('fg-blue', 'show');
+    
   * toggle class;
-  * add class;
+  
+_manual toggle_
+  
+if (pizza.classList.contains('olive')) {
+    pizza.classList.remove('olive');
+} else {
+    pizza.classList.add('olive');
+}
+
+_or_
+
+    * circle.classList.toggle('olive');
+
+  * replace all existing classes
+  
+    * circle.className = 'fg-blue scale show';
+    
+  * add class
+  
+    * circle.className += 'hide';
+    * circle.classList.add('fg-blue', 'show');
+    
+  * hide an element  
+  
+    * const hide = (elem) => { elem.classList.add('hidden'); }
+    * hide(document.querySelector('.circle'));
+
+  * show an element
+  
+    * const show = (elem) => { elem.classList.remove('hidden'); }
+    * show(document.querySelector('.circle'));
+
+  * toggle the element visibility
+  
+    * const toggle = (elem) => { elem.classList.toggle('hidden');}
+    * toggle(document.querySelector('.btn'));
+    
+  * contain; 
+      * console.log(circle.classList.contains('blue')); // true or false;
   
   * createElement();
+  
   * select elements:
     * getElementsByClassName;
     * getElementsById;
     * querySelector;
+    
+  * write text into div:
+  
+    * var theDiv = document.getElementById("<ID_OF_THE_DIV>"); var content = document.createTextNode("<YOUR_CONTENT>"); theDiv.appendChild(content);
+
+_or_
+
+    * var theDiv = document.getElementById("<ID_OF_THE_DIV>"); theDiv.innerHTML += "<YOUR_CONTENT>"; 
+  
   
 ## browser actions:
   * open new windows:
