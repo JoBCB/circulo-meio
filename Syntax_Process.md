@@ -8,8 +8,6 @@
           * Renick: (1) performer side code: client to browser; (2) parse messages;
           * Joana: browser output target/ side mapping;
       * 1.3 load vocabulary from one's node sessions into web browser;
-          * https://stackoverflow.com/questions/33380608/output-console-log-to-html
-          * https://stackoverflow.com/questions/45132192/print-console-log-on-html
           
 * 2. Adapting audio:
      * 2.1 mapping library to translate from OSC to a node server;
@@ -20,7 +18,8 @@
 
 * 4. Interface for performance:
      * how to display the text from webconsole on the webpage;
-    
+          * https://stackoverflow.com/questions/33380608/output-console-log-to-html
+          * https://stackoverflow.com/questions/45132192/print-console-log-on-html
 
 ### Main Structure
 
