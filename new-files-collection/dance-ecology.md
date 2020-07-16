@@ -1,5 +1,7 @@
 ### some thoughts on the different coding files;
 
+## HTML + CSS (elements) + JS (dancers)
+
 mapping elements:
 
 	•	props (like as in scenography: shapes; text; iframes...)
