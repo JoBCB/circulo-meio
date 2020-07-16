@@ -116,6 +116,8 @@ const circle = document.querySelector('.circle');
     * console.log(circle.className); 
     * console.log(circle.classList);
     
+    * [see ref](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_classname2)
+    
   * get first class name
     * console.log(circle.classList[0]); 
 
