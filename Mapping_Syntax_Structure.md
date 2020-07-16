@@ -211,6 +211,8 @@ __possible elements:__ _display; size; opacity; color; z-index order;_
 
 > dancer01 = > function vocabulary;
 
+> stage = > document.querySelector(".stage01") //could be an iframe or simply an already defined div;
+
 > prop01 =  document.querySelector("#circle");
 
 > function public_or_private ([color,size]) { 
