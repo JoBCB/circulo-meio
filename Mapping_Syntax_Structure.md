@@ -117,10 +117,10 @@ const circle = document.querySelector('.circle');
     * console.log(circle.classList);
     
   * get first class name
-    * console.log(pizza.classList[0]); // hot
+    * console.log(circle.classList[0]); 
 
   * get total number of classes
-    * console.log(circle.classList.length); // 3
+    * console.log(circle.classList.length); 
 
   * remove class;
     * circle.classList.remove('fg-blue', 'show');
@@ -129,15 +129,15 @@ const circle = document.querySelector('.circle');
   
 _manual toggle_
   
-if (pizza.classList.contains('olive')) {
-    pizza.classList.remove('olive');
+if (circle.classList.contains('bg-blue')) {
+    circle.classList.remove('bg-blue');
 } else {
-    pizza.classList.add('olive');
+    circle.classList.add('bg-blue');
 }
 
 _or_
 
-    * circle.classList.toggle('olive');
+   * circle.classList.toggle('bg-blue');
 
   * replace all existing classes
   
