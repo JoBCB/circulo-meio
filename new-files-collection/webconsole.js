@@ -7,8 +7,8 @@ function log(message) {
 
 function start() {
   console.log('starting...');
-  log('Something ...');
+  log('message from the webconsole ...');
   console.log('... finished');
 }
 
-start();
+// start();
