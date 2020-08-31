@@ -15,11 +15,9 @@
 
 * 3. Web RTC and web sockets;
      * plus streaming sound;
-     * notes on web sockets:
-             
-             — web sockets (made for message, web sockets themselves can stream) https://socket.io/#how-to-use + https://socket.io/docs/server-initialization/
-              
-              —socket server; we need a node.js + VPS + https://pm2.keymetrics.io/docs/usage/startup/
+     * notes on web sockets:          
+          * web sockets (made for message, web sockets themselves can stream) https://socket.io/#how-to-use + https://socket.io/docs/server-initialization/           
+          * socket server; we need a node.js + VPS + https://pm2.keymetrics.io/docs/usage/startup/
                
 * 4. Interface for performance:
      * how to display the text from webconsole on the webpage;
