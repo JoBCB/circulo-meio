@@ -4,6 +4,9 @@
       * 1.1 replicate haskell < — > browser in JS/Node (terminal < — > browser/html);
           * open two terminal and start node;
           * interpret node session;
+          * se notes on web sockets:
+              — web sockets (made for message, web sockets themselves can stream) https://socket.io/#how-to-use + https://socket.io/docs/server-initialization/
+               —socket server; we need a node.js + VPS + https://pm2.keymetrics.io/docs/usage/startup/
       * 1.2 create operators and make more general functions;
           * Renick: (1) performer side code: client to browser; (2) parse messages;
           * Joana: browser output target/ side mapping;
