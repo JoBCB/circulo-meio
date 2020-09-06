@@ -8,11 +8,11 @@
 _Examples of Glossaries_
 
 * [Rosetta Code](http://rosettacode.org/wiki/Rosetta_Code);
-* [P5 JS](https://p5js.org/reference/
-* [TidalCycles](https://tidalcycles.org/index.php/All_the_functions
-* [Encyclopedia de la Parole](https://encyclopediedelaparole.org/fr 
-* [See comment explanation](https://www.camposonico.net/
-* [UI experiments](https://visuwords.com/mourn
+* [P5 JS](https://p5js.org/reference/)
+* [TidalCycles](https://tidalcycles.org/index.php/All_the_functions)
+* [Encyclopedia de la Parole](https://encyclopediedelaparole.org/fr)
+* [See comment explanation](https://www.camposonico.net/)
+* [UI experiments](https://visuwords.com/mourn)
 * [WordNet, A Lexical Database for English](https://wordnet.princeton.edu/)
 * [ConceptNet — An open, multilingual knowledge graph](http://conceptnet.io/)
 
