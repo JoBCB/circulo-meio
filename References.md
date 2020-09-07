@@ -4,6 +4,7 @@
 
 * [List of Live Coding Languages](https://github.com/toplap/awesome-livecoding)
 * [Kate Sicchio on Choreographic Languages](http://blog.sicchio.com/works/sound-choreographer-body-code/)
+* [Yvonne Rainer Choreography](https://www.fondation-langlois.org/9evenings/e/yvonne-rainer/index.html)
 
 _Examples of Glossaries_
 
