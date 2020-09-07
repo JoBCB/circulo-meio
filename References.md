@@ -15,6 +15,7 @@ _Examples of Glossaries_
 * [UI experiments](https://visuwords.com/mourn)
 * [WordNet, A Lexical Database for English](https://wordnet.princeton.edu/)
 * [ConceptNet — An open, multilingual knowledge graph](http://conceptnet.io/)
+* [Word Mapping](https://exploreat.acdh-dev.oeaw.ac.at/)
 
 ### TOOLS
 
