@@ -3,6 +3,7 @@
 ### ON LANGUAGE
 
 * [List of Live Coding Languages](https://github.com/toplap/awesome-livecoding)
+* [Esoteric Programming](https://esoteric.codes/)
 * [Kate Sicchio on Choreographic Languages](http://blog.sicchio.com/works/sound-choreographer-body-code/)
 * [Yvonne Rainer Choreography](https://www.fondation-langlois.org/9evenings/e/yvonne-rainer/index.html)
 
