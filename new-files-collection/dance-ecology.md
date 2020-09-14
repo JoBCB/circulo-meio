@@ -1,6 +1,7 @@
-### some thoughts on the different coding files;
 
-## HTML + CSS (elements) + JS (dancers)
+
+
+## HTML(stage) + CSS (props) + JS (dancers)
 
 # Scene Components: 
 	
@@ -11,5 +12,6 @@
 * __dancers__ (algorithmic characters that combine actions that include props in different stages)
 
 	* dancers build up choreographies — set a choreographic relational filed;
+	* action operators (add + / remove - / modify ~) + vocabulary (parameters) + output device / target system;
 		
 * __performance score__  composed by the choreographic vocabulary defined by the dancer which present the interactions through naming the fields;
