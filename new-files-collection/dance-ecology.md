@@ -12,4 +12,4 @@
 
 	* dancers build up choreographies — set a choreographic relational filed;
 		
-* __performance score__  vocabulary that defines the interactions through naming the fields;
+* __performance score__  composed by the choreographic vocabulary defined by the dancer which present the interactions through naming the fields;
