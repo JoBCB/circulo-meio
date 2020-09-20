@@ -178,7 +178,11 @@ _or_
     
   * write text into div:
   
-   * var theDiv = document.getElementById("<ID_OF_THE_DIV>"); var content = document.createTextNode("<YOUR_CONTENT>"); theDiv.appendChild(content);
+   * var theDiv = document.getElementById("<ID_OF_THE_DIV>"); 
+   
+   var content = document.createTextNode("<YOUR_CONTENT>"); 
+   
+   theDiv.appendChild(content);
 
 _or_
 
@@ -197,7 +201,7 @@ _notes:_
   * (CSS parent nodes)[https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append];
   * (CSS child sibling)[https://www.w3schools.com/cssref/sel_nth-child.asp];
   * (JS arrays)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array]
-  * (JS reference on transitions and animations)[https://css-tricks.com/controlling-css-animations-transitions-javascript/];
+  * (JS reference on and animations)[https://css-tricks.com/controlling-css-animations-transitions-javascript/] + (this one)[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions];
 
 - - - 
 
