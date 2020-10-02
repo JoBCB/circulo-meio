@@ -3,6 +3,14 @@
 // dancer01 = > function vocabulary;
 
 
+// stage01 if already defined as an iframe:
+
+function sendMeToURL(){
+    document.getElementById('stage01').src="http://google.com/";
+} 
+sendMeToURL()
+
+
 // stage02 = document.createElement("div"); 
 
 // stage02 = document.querySelector(".stage02");
@@ -94,7 +102,7 @@ function circulation_of_affects () {
 
 // ZOOM IN AND OUT STAGE X
 
-function breathing() {
+function breathing(scale) {
 	var zooming = document.querySelector("body");
 	currentScale = 1;
 	currenttime = setInterval(function() {
@@ -110,13 +118,14 @@ function no_breathing() {
 // ROTATE
 
 function vicious_circle () {
-    var centro = document.getElementById("stage"),
+    var centro = document.getElementById("stage01"),
     deg = 10;
     des_centro = setInterval(function() {
     centro.style.transform = "rotateY(" + deg + "deg)";
     deg = (deg + 10) % 360
     }, 60); 
     } 
+setInterval("vicious_circle ()", 800)
 
 function interrupt () { clearInterval(des_centro); } 
 
@@ -172,7 +181,6 @@ document.querySelector("html").style.height="5000px";
 document.querySelector("html").style.position="absolute";
 }
 //tangent ()
-
 
 // CHANGE BETWEEN FRAMES
 

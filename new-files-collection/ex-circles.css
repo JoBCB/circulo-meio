@@ -1,0 +1,235 @@
+@font-face {
+  font-family: Libertinage;
+  src: url(Libertinage.ttf);
+}
+html {
+    box-sizing: border-box;
+    font-size: 21px;
+    line-height: 24px;  
+        height: 100%
+}
+*, *:before, *:after { 
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; 
+}
+body {
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+.topnav{
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+	width: 95%;
+}
+#log {
+	display: block;
+	position: fixed;
+	opacity: 0.4;
+  	font-family: monospace;
+  	font-size: 16pt;
+  	color: #D94073;
+  	background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(255,255,255,1)));
+	background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+	background: -o-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+	background: -ms-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+	background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+    width: 100px;
+    height: auto;
+    left: 0;
+    bottom: 0;
+}
+input, button {
+	font-family: 'Libertinage', sans-serif;
+	font-size: 0.7rem;
+	margin: 0.5rem 0rem 0.5rem 1rem;
+	border: 0.1rem solid #fce5f3;
+	border-radius: 1rem;
+	padding: 0.2rem;
+	color: #000;
+	text-decoration: none;
+}
+#command{
+	width: 260px;
+}
+.glossary {
+	background: #fce5f3;
+}
+#vocabularylist {
+	margin: 0.5rem 0rem 0.5rem 1rem;
+	display: block;
+	position: fixed;
+	width: 100px;
+    height: auto;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+#vocabularylist p {
+	opacity: 0.8;
+	font-family: 'Libertinage', sans-serif;
+	font-size: 0.8rem;
+	line-height: 1rem;
+	color: #000;
+	transform: skewY(20deg);
+}
+
+input[type="text"] {
+	color: #000;
+}
+input:focus {
+	outline: none;
+	background: #fce5f3;
+}
+input:-webkit-autofill {
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0 50px white inset;
+}
+button:active {
+    background-color: #FFF;
+}
+button:focus {
+	outline: none;
+	background: rgb(239, 239, 239);
+}
+input:hover, button:hover {
+   -moz-box-shadow:     0 0 20px #fce5f3;
+   -webkit-box-shadow:  0 0 20px #fce5f3;
+   box-shadow:          0 0 20px #fce5f3;
+}
+.shine {
+    -webkit-animation: glow 3s infinite alternate;
+}
+@-webkit-keyframes glow {
+    to {
+        text-shadow: 0 0 8px #ff029c;
+    }
+}
+@keyframes glow {
+    to {
+        box-shadow: 0 0 8px #ff029c;
+    }
+}
+#stage01, #stage02, #stage03, #stage04, #stage05 {
+    z-index: 1;
+}
+#writing-stage {
+	z-index: 99;
+}
+
+/*  SHAPES  */     
+
+#circle01 {
+  position: absolute;
+    border-radius: 50% 50%; 
+    width: 70vw;
+    height: 70vw;
+    top: 0;
+    right: 0; 
+    box-shadow: 2px 20px 100px #323232; 
+}
+
+.otherthan {
+	animation: morph  22s  linear infinite;
+    -webkit-animation: morph  22s linear infinite;  
+}
+.same{
+	animation: none;
+    -webkit-animation: none; 
+}
+
+@keyframes morph {
+    0% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    25% { 
+      border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    }
+    50% {
+      border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+    }
+    75% {
+      border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+    }
+    100% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+  }
+
+.sliding {
+  animation: slide 10s ease-in-out infinite; 
+  -webkit-animation: slide 10s infinite alternate; /* Safari 4+ */
+    -moz-animation:  slide 10s infinite alternate; /* Fx 5+ */
+    -o-animation:    slide 10s infinite alternate; /* Opera 12+ */
+    animation:       slide 10s infinite alternate; /* IE 10+, Fx 29+ */    
+}
+.noslide {
+  animation: slide 10s ease-in-out infinite; 
+  -webkit-animation: slide 10s infinite alternate; /* Safari 4+ */
+    -moz-animation:  slide 10s infinite alternate; /* Fx 5+ */
+    -o-animation:    slide 10s infinite alternate; /* Opera 12+ */
+    animation:       slide 10s infinite alternate; /* IE 10+, Fx 29+ */    
+}
+
+.breathing {
+  animation: breathe 15s ease-in-out infinite; 
+  -webkit-animation: breathe 15s infinite alternate; /* Safari 4+ */
+    -moz-animation:  breathe 15s infinite alternate; /* Fx 5+ */
+    -o-animation:    breathe 15s infinite alternate; /* Opera 12+ */
+    animation:       breathe 15s infinite alternate; /* IE 10+, Fx 29+ */    
+}
+.colouring{
+  animation: colorchange 5s infinite; 
+    -webkit-animation: colorchange 5s infinite; 
+}
+.nocolouring{
+  animation: none; 
+  -webkit-animation: none; 
+}
+
+@keyframes slide {
+  0% { transform:translateX(-500px) }
+  10% { transform:translateX(0px) }
+  50% { transform:translateY(-500px) }
+  100% { transform:translateX(-500px) }
+}
+
+@keyframes slide {
+  0% { transform:translateX(-500px) }
+  10% { transform:translateX(0px) }
+  50% { transform:translateY(-500px) }
+  100% { transform:translateX(-500px) }
+}
+
+@-webkit-keyframes breathe {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes breathe {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes breathe {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes breathe {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes colorchange
+    {
+      0%   {background: #000;}
+      100% {background: #FFF; }
+}
+
+@-webkit-keyframes colorchange
+    {
+      0%   {background: #000;}
+      100% {background: #FFF;}
+} 

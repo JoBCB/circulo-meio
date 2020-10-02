@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Circulo & Meio</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="code for the JS library and coding environment as part of the research project Circle and Half and Other Geometries">
+        <meta name="author" content="Joana Chicau and Renick Bell">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="all" href="ex-circles.css"></link>
+<!-- 
+        <link rel="stylesheet" type="text/css" media="all" href="osc-view.css"></link>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/osc.js/dist/osc-browser.min.js"></script>
+        <script src="other-geometries.js" type="text/javascript"></script>
+        <script src="dancers.js" type="text/javascript"></script>
+        <script src="websocket.js" type="text/javascript"></script>
+        <script src="webconsole.js" type="text/javascript"></script> -->
+
+    <style type="text/css">
+    </style>  
+    </head>
+
+<body class="">
+<div class="topnav">
+    <div id="writing-stage">
+	  <form id="console-form" autocomplete="off">
+	    <input type="text"  placeholder="type in any movement from the glossary" id="command" class="shine">
+	    <input type="submit" value="Move">
+	    <button id="clear" type="button">Clear Moves</button>
+	  </form>
+	  <pre id="console"></pre>
+	</div>
+
+	<div>
+		<button type="button" onclick="showDiv('vocabularylist')">Movement Glossary</button>
+	</div>
+</div>
+<!-- 
+    <iframe 
+    id="stage01"
+    class="stage01 grayscale"
+    title=""
+    width="100%"
+    height="900"
+    frameborder="0"
+    scrolling="yes"
+    margin="0"
+    marginheight="0"
+    marginwidth="0"
+    src="https://www.google.com/search?q=all+movement&sxsrf=ALeKk01OlVacRnc8JvKUusSRhvsaCai59Q:1600353898656&source=lnms&sa=X&ved=0ahUKEwjumpPttvDrAhXDGewKHdv2DH4Q_AUIDigA&biw=1260&bih=911&dpr=2"
+    >
+    </iframe> 
+ -->   
+  	<div  id="stage02"> 
+        <div id="circle01"></div>
+    </div> 
+
+  	<div  id="vocabularylist"> 
+        <p>breathing ()</p>
+        <p>dissolving ()</p>
+        <p>translating ()</p>
+        <p>morphing ()</p>
+        <p>uncentering ()</p>
+    </div> 
+
+<script type="text/javascript">
+// TYPE
+	const consoleElm = document.querySelector('#console');
+	const clearButton = document.querySelector('#clear');
+
+	clearButton.addEventListener('click', (event) => {
+		consoleElm.innerHTML = '';
+	});
+
+	const consoleForm = document.querySelector('#console-form');
+	consoleForm.addEventListener('submit', (event) => {
+		event.preventDefault();
+	  const command = event.target.querySelector('#command').value;
+	  const value = eval(command);
+	  consoleElm.innerHTML += (value === undefined ? 'undefined' : value) + '\n';
+	});
+
+// GLOSSARY
+	function showDiv(vocabularylist){
+       var e = document.getElementById(vocabularylist);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+// MOVEMENTS
+	function uncentering () {    
+    if (document.querySelector("#stage02").style.transform == "") {
+          (document.querySelector("#stage02").style.transform = "skew(145deg,-20deg)");
+          console.log("uncentering")
+        }
+    else  {
+        (document.querySelector("#stage02").style.transform = "");
+         console.log("uncentering")
+        }
+	}
+	function breathing () {    
+     if (document.querySelector("#stage02").style.transform=="scale(0.2, 0.2)") {
+           (document.querySelector("#stage02").style.transform="scale(5, 5)")
+         }
+     else  {
+         (document.querySelector("#stage02").style.transform="scale(0.2, 0.2)") 
+         }
+	}
+	function dissolving () {
+
+			var disDiv = document.querySelector("html");
+	 	 		if (disDiv.className == 'colouring') {
+	    	disDiv.className = 'nocolouring';
+	  			} else {
+	    	disDiv.className = 'colouring';
+	  		}
+	}
+	function morphing () {
+		var morDiv = document.querySelector("#circle01");
+ 	 		if (morDiv.className == 'otherthan') {
+    	morDiv.className = 'same';
+  			} else {
+    	morDiv.className = 'otherthan';
+  		}
+	}
+	function translating () {
+		var transDiv = document.querySelector("#circle01");
+ 	 		if (transDiv.className == 'sliding') {
+    	transDiv.className = 'noslide';
+  			} else {
+    	transDiv.className = 'sliding';
+  		}
+	}	
+</script>
+
+</body>
+</html>
