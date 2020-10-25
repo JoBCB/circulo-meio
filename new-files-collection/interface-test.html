@@ -23,19 +23,46 @@
     </head>
 
 <body class="">
+
 <div class="topnav">
     <div id="writing-stage">
 	  <form id="console-form" autocomplete="off">
 	    <input type="text"  placeholder="type in any movement from the glossary" id="command" class="shine">
 	    <input type="submit" value="Move">
-	    <button id="clear" type="button">Clear Moves</button>
+	    <button id="clear" type="button">Clear Score</button>
+	    <button type="button" onclick="showIndex('indextable')">Active Dancers</button>
 	  </form>
 	  <pre id="console"></pre>
 	</div>
 
 	<div>
-		<button type="button" onclick="showDiv('vocabularylist')">Movement Glossary</button>
+		<button type="button" onclick="showGloss('vocabularylist')">Movement Glossary</button>
 	</div>
+</div>
+
+<div id="indextable">	
+	<table>
+	  <tr>
+	    <th>dancers</th>
+	    <th>movement</th>
+	    <th>tempo</th>
+	  </tr>
+	  <tr>
+	    <td>dancer 01</td>
+	    <td>breathing, uncentering, morphing</td>
+	    <td>100,1000</td>
+	  </tr>
+	  <tr>
+	    <td>dancer 02</td>
+	    <td>dissolving</td>
+	    <td>500,2000</td>
+	  </tr>
+	  <tr>
+	    <td>dancer 03</td>
+	    <td>translating</td>
+	    <td>250,1500</td>
+	  </tr>
+	</table>
 </div>
 <!-- 
     <iframe 
@@ -83,23 +110,32 @@
 	});
 
 // GLOSSARY
-	function showDiv(vocabularylist){
+	function showGloss(vocabularylist){
        var e = document.getElementById(vocabularylist);
        if(e.style.display == 'block')
           e.style.display = 'none';
        else
           e.style.display = 'block';
     }
+// INDEX TABLE ACTIVE DANCERS
+	function showIndex(indextable){
+       var i = document.getElementById(indextable);
+       if(i.style.display == 'block')
+          i.style.display = 'none';
+       else
+          i.style.display = 'block';
+    }
 // MOVEMENTS
 	function uncentering () {    
     if (document.querySelector("#stage02").style.transform == "") {
           (document.querySelector("#stage02").style.transform = "skew(145deg,-20deg)");
-          console.log("uncentering")
+          console.log("uncentering on")
         }
     else  {
         (document.querySelector("#stage02").style.transform = "");
-         console.log("uncentering")
+         console.log("uncentering off")
         }
+        return 'uncentering';
 	}
 	function breathing () {    
      if (document.querySelector("#stage02").style.transform=="scale(0.2, 0.2)") {
@@ -108,6 +144,7 @@
      else  {
          (document.querySelector("#stage02").style.transform="scale(0.2, 0.2)") 
          }
+        return 'breathing';
 	}
 	function dissolving () {
 
@@ -117,6 +154,7 @@
 	  			} else {
 	    	disDiv.className = 'colouring';
 	  		}
+	  	return 'dissolving';
 	}
 	function morphing () {
 		var morDiv = document.querySelector("#circle01");
@@ -125,6 +163,7 @@
   			} else {
     	morDiv.className = 'otherthan';
   		}
+  	  	return 'morphing';
 	}
 	function translating () {
 		var transDiv = document.querySelector("#circle01");
@@ -133,7 +172,29 @@
   			} else {
     	transDiv.className = 'sliding';
   		}
-	}	
+  		return 'translating';
+	}
+
+
+// CLASS ACTIVE TOGGLE
+// see ref https://css-tricks.com/managing-state-css-reusable-javascript-functions/
+
+function danceractive () {
+  var element = document.getElementById("myDIV");
+
+  if (element.classList) { 
+    element.classList.toggle("mystyle");
+  } else {
+    var classes = element.className.split(" ");
+    var i = classes.indexOf("mystyle");
+
+    if (i >= 0) 
+      classes.splice(i, 1);
+    else 
+      classes.push("mystyle");
+      element.className = classes.join(" "); 
+  }
+}	
 </script>
 
 </body>
