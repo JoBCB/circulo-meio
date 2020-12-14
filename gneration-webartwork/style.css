@@ -1,0 +1,107 @@
+@font-face {
+  font-family: Libertinage;
+  src: url(Libertinage.ttf);
+}
+html {
+    box-sizing: border-box;
+    font-size: 5vw;
+    line-height: 7vw;  
+    height: 100%
+}
+*, *:before, *:after { 
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; 
+}
+body{
+	margin:0px;
+}
+#circle01 {
+    position: absolute;
+    border-radius: 50% 50%;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 20px 100px #323232;
+    display: none
+}
+
+.otherthan {
+	animation: morph  22s  linear infinite;
+    -webkit-animation: morph  22s linear infinite;  
+}
+.same{
+	animation: none;
+    -webkit-animation: none; 
+}
+
+@keyframes morph {
+    0% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    25% { 
+      border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    }
+    50% {
+      border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+    }
+    75% {
+      border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+    }
+    100% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+  }
+
+
+.sliding {
+  animation: slide 10s ease-in-out infinite; 
+  -webkit-animation: slide 10s infinite alternate; /* Safari 4+ */
+    -moz-animation:  slide 10s infinite alternate; /* Fx 5+ */
+    -o-animation:    slide 10s infinite alternate; /* Opera 12+ */
+    animation:       slide 10s infinite alternate; /* IE 10+, Fx 29+ */    
+}
+.noslide {
+  animation: slide 10s ease-in-out infinite; 
+  -webkit-animation: slide 10s infinite alternate; /* Safari 4+ */
+    -moz-animation:  slide 10s infinite alternate; /* Fx 5+ */
+    -o-animation:    slide 10s infinite alternate; /* Opera 12+ */
+    animation:       slide 10s infinite alternate; /* IE 10+, Fx 29+ */    
+}
+
+
+@keyframes slide {
+  0% { transform:translateX(-500px) }
+  10% { transform:translateX(0px) }
+  50% { transform:translateY(-500px) }
+  100% { transform:translateX(-500px) }
+}
+
+@keyframes slide {
+  0% { transform:translateX(-500px) }
+  10% { transform:translateX(0px) }
+  50% { transform:translateY(-500px) }
+  100% { transform:translateX(-500px) }
+}
+
+.colouring{
+  animation: colorchange 5s infinite; 
+    -webkit-animation: colorchange 5s infinite; 
+}
+.nocolouring{
+  animation: none; 
+  -webkit-animation: none; 
+}
+
+@keyframes colorchange
+    {
+      0%   {background: #000;}
+      100% {background: #FFF; }
+}
+
+@-webkit-keyframes colorchange
+    {
+      0%   {background: #000;}
+      100% {background: #FFF;}
+} 
