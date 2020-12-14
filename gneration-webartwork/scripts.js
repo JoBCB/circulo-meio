@@ -72,8 +72,8 @@ x = document.querySelector("#circle01");
 
 function uncentering ([deg]) {    
     if (x.style.transform == "") 
-    	{( x.style.transform = "skew(" + deg + "deg)"; )}
-    deg = (deg + 10) % 360;
+    	{ x.style.transform = "skew(" + deg + "deg)";
+            deg = (deg + 10) % 360; }
     else  { x.style.transform = ""; }
     return 'uncentering';
 }
