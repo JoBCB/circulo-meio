@@ -4,8 +4,6 @@
 }
 html {
     box-sizing: border-box;
-    font-size: 5vw;
-    line-height: 7vw;  
     height: 100%
 }
 *, *:before, *:after { 
@@ -16,6 +14,52 @@ html {
 body{
 	margin:0px;
 }
+#console  {
+  margin: 1vw;
+  font-family: Libertinage, sans-serif;
+  color: #000;
+  opacity: 0.9;
+  position: absolute;
+  z-index: 99;
+  font-size: 2.5vw;
+  line-height: 3vw;
+  max-width: 35vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 95vh;
+  overflow: hidden;
+}
+#console p {
+  margin: 0px;
+  animation: glow 2s infinite alternate;
+  -o-animation: glow 2s infinite alternate;
+  -moz-animation: glow 2s infinite alternate;
+  -webkit-animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+    to {
+        text-shadow: 0 0 6px #FFF;
+    }
+}
+@-webkit-keyframes glow {
+    to {
+        text-shadow: 0 0 6px #FFF;
+    }
+}
+#stage01 {
+    z-index: 1;  
+}
+#text {
+    font-size: 8vw;
+    line-height: 9.5vw;  
+    position: absolute;
+    z-index: 90;
+    top: 0;
+    font-family: serif;
+    font-weight: bold;
+    word-spacing: 1vw;
+}
 #circle01 {
     position: absolute;
     border-radius: 50% 50%;
@@ -24,7 +68,8 @@ body{
     top: 0;
     left: 0;
     box-shadow: 2px 20px 100px #323232;
-    display: none
+    display: none;
+    z-index: 80;
 }
 
 .otherthan {
@@ -54,22 +99,38 @@ body{
     }
   }
 
+@-webkit-keyframes morph {
+    0% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    25% { 
+      border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    }
+    50% {
+      border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+    }
+    75% {
+      border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+    }
+    100% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+}
 
 .sliding {
   animation: slide 10s ease-in-out infinite; 
   -webkit-animation: slide 10s infinite alternate; /* Safari 4+ */
-    -moz-animation:  slide 10s infinite alternate; /* Fx 5+ */
-    -o-animation:    slide 10s infinite alternate; /* Opera 12+ */
-    animation:       slide 10s infinite alternate; /* IE 10+, Fx 29+ */    
+  -moz-animation:   slide 10s infinite alternate; /* Fx 5+ */
+  -o-animation:     slide 10s infinite alternate; /* Opera 12+ */
+  animation:        slide 10s infinite alternate; /* IE 10+, Fx 29+ */    
 }
 .noslide {
   animation: slide 10s ease-in-out infinite; 
   -webkit-animation: slide 10s infinite alternate; /* Safari 4+ */
-    -moz-animation:  slide 10s infinite alternate; /* Fx 5+ */
-    -o-animation:    slide 10s infinite alternate; /* Opera 12+ */
-    animation:       slide 10s infinite alternate; /* IE 10+, Fx 29+ */    
+  -moz-animation:    slide 10s infinite alternate; /* Fx 5+ */
+  -o-animation:      slide 10s infinite alternate; /* Opera 12+ */
+  animation:         slide 10s infinite alternate; /* IE 10+, Fx 29+ */    
 }
-
 
 @keyframes slide {
   0% { transform:translateX(-500px) }
@@ -78,7 +139,7 @@ body{
   100% { transform:translateX(-500px) }
 }
 
-@keyframes slide {
+@-webkit-keyframes slide {
   0% { transform:translateX(-500px) }
   10% { transform:translateX(0px) }
   50% { transform:translateY(-500px) }
@@ -96,12 +157,18 @@ body{
 
 @keyframes colorchange
     {
-      0%   {background: #000;}
-      100% {background: #FFF; }
+      0%   { background: #000;}
+      30%  { background:radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%) }
+      50%  { background: #FFF; }
+      90%  { background: radial-gradient(ellipse at top, black, transparent),radial-gradient(ellipse at bottom, gray, transparent); }
+      100% { background: repeating-linear-gradient(black, blue 10%, white);}
 }
 
 @-webkit-keyframes colorchange
     {
-      0%   {background: #000;}
-      100% {background: #FFF;}
+      0%   { background: #000;}
+      30%  { background:radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%) }
+      50%  { background: #FFF; }
+      90%  { background: radial-gradient(ellipse at top, black, transparent),radial-gradient(ellipse at bottom, gray, transparent); }
+      100% { background: repeating-linear-gradient(black, blue 10%, white);}
 } 
