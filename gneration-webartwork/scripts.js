@@ -1,14 +1,5 @@
 
-
-// see DANCERS.JS 
-// https://github.com/JoBCB/circulo-meio/blob/master/new-files-collection/dancers.js
-
-
-// :q
-// how to select various opr randomize? x = document.querySelector("#circle01");
-
-
-// functions re-written by Joana 
+// Circulo&Meio functions re-written by Joana 
 
 // example with querySelector
 function public_or_private ([color,number, size]) { 
@@ -25,17 +16,21 @@ function public_or_private ([color,number, size]) {
 x = document.querySelector("#circle01");
 
 // — PUBLIC PRIVATE —
-function public_or_private ([color,number,size]) { 
+
+// removing x.style.backgroundColor=color 
+// as it has no effect if x='iframe' 
+
+function public_or_private ([number,size]) { 
 	if (x.style.display=="none") { 
 		(x.style.display="inline") } 
 		else { (x.style.display="none") }; 
-		x.style.backgroundColor=color;
 		x.style.opacity=number;
 		x.style.transform=`scale(${size})`;
 
     console.log('public_or_private ()');
 }
-// public_or_private (["black", "0.5", "2"])
+// public_or_private (["0.5", "2"])
+
 
 
 // — BREATHING —
@@ -84,18 +79,6 @@ function decentering ([deg]) {
     console.log('decentering ()');
 }
 
-// — CENTERING —
-function centering ([deg]) {    
-    if (x.style.transform == "") {
-          (x.style.transform = "skew(" + deg + "deg)")
-        }
-    else  {
-        (x.style.transform = "") 
-        }
-
-    console.log('centering ()');
-}
-
 
 // — EXPANDING THE VOID —
 // here we can keep this querySelector as its the only place it should apply;
@@ -120,7 +103,7 @@ function dissolving () {
 	console.log('dissolving ()');
 	}
 
-// ROTATE
+// ROTATING
 function vicious_circle([deg]) {
 	if ( x.style.display=="none") 
     { (x.style.display="inline") } 
@@ -175,38 +158,47 @@ circulating()
 
 
 // ORBITING 
+// not sure if we need to toggle here — we could keep this one always active?
 
-dance = new Array(
+var dance = new Array(
 	"https://www.google.com/search?q=public+sphere&newwindow=1&tbs=ic:gray,sur:fc&tbm=isch&source=lnt&sa=X&ved=0ahUKEwjWjdyy8M3bAhUFe8AKHQTgBEcQpwUIIA&biw=1275&bih=947&dpr=2",
-    "https://www.google.com/search?q=equidistant&tbm=isch&tbs=ic:gray%2Csur:fc&hl=en&sa=X&ved=0CAEQpwVqFwoTCMjhtcrpz-0CFQAAAAAdAAAAABAD&biw=1575&bih=829",
-    "https://upload.wikimedia.org/wikipedia/commons/0/07/Sphere_and_Ball.png",
-	"https://www.google.com/search?num=50&newwindow=1&source=hp&ei=Y5ofW9HmOIKH6ATV2JCgBQ&q=void&oq=void&gs_l=psy-ab.3..0i67k1j0l7j0i10k1j0.3947.4297.0.4425.6.5.0.0.0.0.104.366.3j1.5.0....0...1c.1.64.psy-ab..1.5.484.6..35i39k1.118.tOlyNKxgiSY", 
+  "https://www.google.com/search?q=equidistant&tbm=isch&tbs=ic:gray%2Csur:fc&hl=en&sa=X&ved=0CAEQpwVqFwoTCMjhtcrpz-0CFQAAAAAdAAAAABAD&biw=1575&bih=829",
+  "https://upload.wikimedia.org/wikipedia/commons/0/07/Sphere_and_Ball.png",
+	"https://www.google.com/search?num=50&newwindow=1&source=hp&ei=Y5ofW9HmOIKH6ATV2JCgBQ&q=void&oq=void&gs_l=psy-ab.3..0i67k1j0l7j0i10k1j0.3947.4297.0.4425.6.5.0.0.0.0.104.366.3j1.5.0....0...1c.1.64.psy-ab..1.5.484.6..35i39k1.118.tOlyNKxgiSY", 	
 	"https://www.google.com/search?q=spinning&newwindow=1&tbm=nws&source=lnms&sa=X&ved=0ahUKEwiAita8783bAhWFTcAKHTfJCiMQ_AUIDSgE&biw=1275&bih=947&dpr=2", 
-	"https://www.google.com/search?q=spinning+jenny&newwindow=1&tbm=isch&source=lnt&tbs=ic:gray&sa=X&ved=0ahUKEwidsujk783bAhUhCMAKHb1hBlgQpwUIIA&biw=1275&bih=947&dpr=2", 
-    "https://upload.wikimedia.org/wikipedia/commons/c/c0/Lunar_libration_with_phase2.gif",
-	"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/HSLSphere.svg/1280px-HSLSphere.svg.png",
+	"https://www.google.com/search?q=spinning+jenny&newwindow=1&tbm=isch&source=lnt&tbs=ic:gray&sa=X&ved=0ahUKEwidsujk783bAhUhCMAKHb1hBlgQpwUIIA&biw=1275&bih=947&dpr=2",    
+  "https://upload.wikimedia.org/wikipedia/commons/c/c0/Lunar_libration_with_phase2.gif",
+	"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/HSLSphere.svg/1280px-HSLSphere.svg.png",	
 	"https://commons.wikimedia.org/wiki/File:Pentatope_70_spheres.gif",
 	"https://en.wikipedia.org/wiki/Circulation", 
 	"https://commons.wikimedia.org/wiki/Clock#/media/File:SunDialAiKhanoum.jpg",
-	"https://upload.wikimedia.org/wikipedia/commons/a/aa/Ancient-egyptian-sundial.jpg", 
-	"https://www.google.com/search?newwindow=1&biw=1275&bih=947&tbs=ic%3Agray%2Csur%3Afc&tbm=isch&sa=1&ei=b5wfW4urEIHrgAahoKqwDA&q=for%C3%A7a+centrifuga&oq=for%C3%A7a+centrifuga&gs_l=img.3..0j0i30k1l3j0i8i30k1j0i24k1l2.16712.20347.0.20477.18.13.1.4.4.0.152.1073.10j2.12.0....0...1c.1.64.img..1.17.1089...35i39k1j0i67k1.0.PkAJ441xjdE",
+	"https://upload.wikimedia.org/wikipedia/commons/a/aa/Ancient-egyptian-sundial.jpg", 	
+	"https://www.google.com/search?newwindow=1&biw=1275&bih=947&tbs=ic%3Agray%2Csur%3Afc&tbm=isch&sa=1&ei=b5wfW4urEIHrgAahoKqwDA&q=for%C3%A7a+centrifuga&oq=for%C3%A7a+centrifuga&gs_l=img.3..0j0i30k1l3j0i8i30k1j0i24k1l2.16712.20347.0.20477.18.13.1.4.4.0.152.1073.10j2.12.0....0...1c.1.64.img..1.17.1089...35i39k1j0i67k1.0.PkAJ441xjdE",	
 	"https://upload.wikimedia.org/wikipedia/commons/7/7b/Falling_Sphere_Viscometer.gif",
 	"https://www.google.com/search?q=the%20center%20of&tbm=isch&tbs=ic:gray&hl=en&sa=X&ved=0CAEQpwVqFwoTCMi41Nrrz-0CFQAAAAAdAAAAABAC&biw=1575&bih=829"
-)
-danceIndex = 0
-idInterval = 0
+);
 
-function  from_orbit_to_orbit() {
-danceIndex = (danceIndex + 1) % dance.length
-document.getElementById("stage").src = dance[danceIndex];
+function from_orbit_to_orbit() {
+	danceIndex = 0;
+	idInterval = 0;
+	noOrbit = setInterval(function() {
+		danceIndex = (danceIndex + 1) % dance.length;
+		document.getElementById("stage01").src = dance[danceIndex];
+	},10000);
+	console.log('from_orbit_to_orbit ()');
+}
 
-console.log('from_orbit_to_orbit ()');
+
+function no_orbit (){
+	    clearInterval(noOrbit);
+	    console.log('no_orbit ()');
 }
 
 
 
 
-// CHANCE DANCE
+
+// CHANCE DANCE — does it still make sense?
 function chance_dance() {   
     var k = Object.keys(vocabularychancedance);
     var rannum= Math.floor(Math.random()*(k.length));
@@ -215,20 +207,116 @@ function chance_dance() {
     } 
 
     vocabularychancedance = { 
-            "welcome": welcome,  
-            "remove": remove,
-            "public_sphere": public_sphere,
-            "private_circle": private_circle, 
-            "breathe_out": breathe_out,
-            "breathe_in":breathe_in,
-            "edge_limits": edge_limits,   
-            "no_edge":no_edge,                                 
+            "public_or_private": public_or_private,
+            "breathing": breathing,
+            "morphing": morphing,
+            "translating": translating,   
+            "decentering":decentering,   
+            "expanding_the_void": expanding_the_void,
+            "dissolving":center,
             "vicious_circle": vicious_circle,
-            "un_centered": un_centered,
-            "center":center,
-            "interrupt": interrupt, 
-            "chance_dance": chance_dance,
-            "from_orbit_to_orbit": from_orbit_to_orbit
+            "dissolving": interrupt, 
+            "from_orbit_to_orbit": from_orbit_to_orbit,
+            "chance_dance": chance_dance
+
 }  
 
+// REVISED DANCERS.JS 
+// prev v.: https://github.com/JoBCB/circulo-meio/blob/master/new-files-collection/dancers.js
+// original by gnarf: https://stackoverflow.com/questions/1280263/changing-the-interval-of-setinterval-while-its-running
 
+
+class Dancer {
+      constructor(name,actionName) {
+              this.name = name;
+              this.actionFunction = actionName;
+            }
+      identify() {
+              console.log(`This dancer is called ${this.name}.`);
+            }
+    }
+
+function getMovement (dancer,vocab) {
+  // this is the variableInterval - so we can change/get the interval here:
+  var interval = this.interval;
+  vocab[(dancer.actionFunction)]();
+  console.log(dancer.name + "'s moves as " + dancer.actionFunction);
+  // we could return a new interval after doing something
+  return interval;
+}
+
+setChoreography = function(callbackFunc, timingArray) {
+  var variableInterval = {
+    index: 0,
+    interval: timingArray,
+    callback: callbackFunc,
+    paused: false,
+    runLoop: function() {
+      if (variableInterval.paused) return;
+      var result = variableInterval.callback.call(variableInterval);
+      if (typeof result == 'number')
+      {
+        if (result === 0) return;
+        variableInterval.interval = result;
+      }
+      variableInterval.loop();
+    },
+    pause: function() {
+      this.paused = true;
+      clearTimeout(this.timeout);
+    },
+    start: function() {
+      this.paused = false;
+      return this.loop();
+    },
+    whichTiming: function () {
+        return this.interval[this.index%(this.interval.length)]
+    },
+    loop: function() {
+      this.timeout = setTimeout(this.runLoop, this.whichTiming());
+      this.index = this.index + 1;
+      return this;
+    }
+  };
+
+  // we might want to change the next line so that they don't start by default
+  return variableInterval;
+};
+
+function pauseDancing (dancer, dancing) {
+  dancing.pause;
+  console.log("\n\n" + dancer.name + " has been paused.")
+}
+
+
+dancerVocabulary["public_or_private"] = x => public_or_private ()
+dancerVocabulary["breathing"] = x => breathing ()
+dancerVocabulary["morphing"] = x => morphing ()
+dancerVocabulary["translating"] = x => translating ()
+dancerVocabulary["decentering"] = x => decentering ()
+dancerVocabulary["expanding_the_void"] = x => expanding_the_void ()
+dancerVocabulary["dissolving"] = x => dissolving ()
+dancerVocabulary["vicious_circle"] = x => vicious_circle ()
+dancerVocabulary["circulating"] = x => circulating ()
+dancerVocabulary["from_orbit_to_orbit"] = x => from_orbit_to_orbit ()
+
+dancerVocabulary["chance_dance"] = x => chance_dance ()
+
+// not sure if you prefer this syntax?
+
+dancerVocabulary = {
+    "centering": x => centering () 
+}
+
+// EXAMPLE
+
+var dancer1Dancing = setChoreography(x => getMovement(dancer1,dancerVocabulary), [100,1000]);  
+
+dancer1 = new Dancer ("dancer1","breathing")
+
+pauseDancing(dancer1,dancer1Dancing)
+
+
+//had this noted for renick sequence: 
+//dancer1Dancing.pause(); dancer1Dancing.interval=[200,500,100];  dancer1Dancing.start(); 
+//eval ("dancer1Dancing.pause(); dancer1Dancing.interval=[200,500,100];  dancer1Dancing.start();");
