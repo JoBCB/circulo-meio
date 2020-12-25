@@ -72,6 +72,34 @@ body{
     z-index: 80;
 }
 
+#triangle {
+    width: 0;
+    height: 0;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    border-top: 100vw solid black;
+}
+
+
+#diamond {
+      width: 0;
+      height: 0;
+      border: 50vw solid transparent;
+      border-bottom-color: red;
+      position: relative;
+      top: -50vw;
+}
+#diamond:after {
+      content: '';
+      position: absolute;
+      left: -50vw;
+      top: 50vw;
+      width: 0;
+      height: 0;
+      border: 50vw solid transparent;
+      border-top-color: #000;
+}
+
 .otherthan {
 	animation: morph  22s  linear infinite;
     -webkit-animation: morph  22s linear infinite;  
