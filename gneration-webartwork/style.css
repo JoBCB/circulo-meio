@@ -174,29 +174,244 @@ body{
   100% { transform:translateX(-500px) }
 }
 
-.colouring{
-  animation: colorchange 5s infinite; 
-    -webkit-animation: colorchange 5s infinite; 
+
+.phase01 {
+  background-size: 300% 300%;
+   background-image: radial-gradient(ellipse farthest-corner at 50% 50% , #fddddd 0%, #fddddd 60%, #454545 65%);
+  animation: one 20s  infinite;
+  -webkit-animation: one 20s infinite;   
 }
-.nocolouring{
+
+.nophase01{
   animation: none; 
   -webkit-animation: none; 
 }
 
-@keyframes colorchange
-    {
-      0%   { background: #000;}
-      30%  { background:radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%) }
-      50%  { background: #FFF; }
-      90%  { background: radial-gradient(ellipse at top, black, transparent),radial-gradient(ellipse at bottom, gray, transparent); }
-      100% { background: repeating-linear-gradient(black, blue 10%, white);}
+@keyframes one { 
+    0%{background-position:20% 20%}
+    16%{background-position:50% 10%}
+    20%{background-position:60% 20%}
+    25%{background-position:80% 20%;}
+    35%{background-position:80% 20%;
+    background-size: 1% 500%;}
+    40%{background-position:90% 50%;
+    background-size: 300% 10%;}
+    50%{background-position:80% 80%;
+      background-size: 100% 100%; }
+    62%{background-position:50% 90%}
+    75%{background-position:20% 80%;
+    background-size: 30% 10%;}
+    79%{background-position:10% 50%;
+    background-size: 30% 10%;}
+    87%{background-position:10% 40%;
+     background-size: 100% 100%; }
+    90%{background-position:20% 30%}
+    100%{background-position:20% 20%}
+}  
+
+@-webkit-keyframes one { 
+    0%{background-position:20% 20%}
+    16%{background-position:50% 10%}
+    20%{background-position:60% 20%}
+    25%{background-position:80% 20%;}
+    35%{background-position:80% 20%;
+    background-size: 1% 500%;}
+    40%{background-position:90% 50%;
+    background-size: 300% 10%;}
+    50%{background-position:80% 80%;
+      background-size: 100% 100%; }
+    62%{background-position:50% 90%}
+    75%{background-position:20% 80%;
+    background-size: 30% 10%;}
+    79%{background-position:10% 50%;
+    background-size: 30% 10%;}
+    87%{background-position:10% 40%;
+     background-size: 100% 100%; }
+    90%{background-position:20% 30%}
+    100%{background-position:20% 20%}
+}  
+
+
+.phase02 {
+  animation: two 20s infinite; 
+    -webkit-animation: two 20s infinite; 
+}
+.nophase02 {
+  animation: none; 
+  -webkit-animation: none; 
 }
 
-@-webkit-keyframes colorchange
-    {
+@keyframes two {
+0% {background: background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 5%);
+    background-size: 10% 10%;}
+5%  {background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 5%);} 
+10% {background: background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 5%);
+    background-size: 10% 100%;}
+15% {background: background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 5%);
+    background-size: 100% 100%;}
+20%  {background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 50%); 
+    background-size: 10% 100%;}
+25% {background: radial-gradient(circle at 50%, #fddddd, #eee 5%, #eee, #454545 50%);
+    background-size: 10% 100%;}
+30% {background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 50%);
+    background-size: 1% 10%;}
+40% {background: radial-gradient(circle at 50%, #fddddd, #eee 5%, #eee, #454545 50%);
+    background-size: 100% 50%;}
+50%{background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 50%);} 
+60% {background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee 0%, #454545 5%);} 
+65% {background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee 5%, #454545 75%);}
+70% {background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%)}
+80% {background: radial-gradient(circle at 50%, #333, #eee 5%, #eee 5%, #333 75%);}
+85% {background: radial-gradient(circle at 50%, #333, #eee 5%, #eee 5%, #eee 75%);}
+95% {background:radial-gradient(circle at 50%, #333, #333 5%, #eee 5%, #333 75%) }
+100% {background: radial-gradient(circle at 50%, #353535, #333 5%, #eee 5%, #333 75%);
+    background-size: 10% 10%;}
+}
+
+@-webkit-keyframes two { 
+  0% {background: background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 5%);
+    background-size: 10% 10%;}
+5%  {background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 5%);} 
+10% {background: background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 5%);
+    background-size: 10% 100%;;}
+20%  {background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 50%); 
+    background-size: 10% 100%;}
+25% {background: radial-gradient(circle at 50%, #fddddd, #eee 5%, #eee, #454545 50%);
+    background-size: 10% 100%;}
+30% {background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 50%);
+    background-size: 1% 10%;}
+40% {background: radial-gradient(circle at 50%, #fddddd, #eee 5%, #eee, #454545 50%);
+    background-size: 100% 50%;}
+50%{background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee, #454545 50%);} 
+60% {background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee 0%, #454545 5%);} 
+65% {background: radial-gradient(circle at 5%, #fddddd, #eee 5%, #eee 5%, #454545 75%);}
+70% {background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%)}
+80% {background: radial-gradient(circle at 50%, #333, #eee 5%, #eee 5%, #333 75%);}
+85% {background: radial-gradient(circle at 50%, #333, #eee 5%, #eee 5%, #eee 75%);}
+95% {background:radial-gradient(circle at 50%, #333, #333 5%, #eee 5%, #333 75%) }
+100% {background: radial-gradient(circle at 50%, #353535, #333 5%, #eee 5%, #333 75%);
+    background-size: 10% 10%;}
+}
+
+.phase03 {
+  animation: three 20s infinite; 
+    -webkit-animation: three 20s infinite; 
+}
+.nophase03 {
+  animation: none; 
+  -webkit-animation: none; 
+}
+
+@keyframes three {
+     0%   { background: #000;}
+      10%  { background: radial-gradient(circle at 50%, #323232, #333 5%, #000, #454545 50%);}
+      20%  { background: #000; }
+      30%  { background: radial-gradient(ellipse at top, black, transparent),radial-gradient(ellipse at bottom, gray, transparent); }
+      33%   { background: #000;}
+      36%  { background: radial-gradient(ellipse at top, black, transparent),radial-gradient(ellipse at center, black, transparent)}
+      42% {background: radial-gradient(ellipse at center, #020202, transparent),radial-gradient(ellipse at center, #454545, #ffdede);}
+      45%   { background: #000;}
+      50% { background: radial-gradient(ellipse at center, #020202, transparent),radial-gradient(ellipse at bottom, #454545, #eee)}
+      55%   { background: #000;}
+      60% {background: radial-gradient(ellipse at center, black, transparent),radial-gradient(ellipse at bottom, gray, transparent)}
+      65%   { background: #000;}
+      70% { background: radial-gradient(ellipse at right, black, transparent),radial-gradient(ellipse at bottom, black, transparent);}
+      80%   { background: #000;}
+      85% { background: radial-gradient(ellipse at right, #353535, transparent),radial-gradient(ellipse at bottom, #eee, transparent)} 
+      90%   { background: #000;}
+      95% {background:  radial-gradient(ellipse at center, #323232, #eee),radial-gradient(ellipse at bottom, #323232, #333)}   
+      100% {background:  radial-gradient(ellipse at center, #000000, #454545 10%, #000000)}          
+}
+
+@-webkit-keyframes three {
       0%   { background: #000;}
-      30%  { background:radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%) }
-      50%  { background: #FFF; }
-      90%  { background: radial-gradient(ellipse at top, black, transparent),radial-gradient(ellipse at bottom, gray, transparent); }
-      100% { background: repeating-linear-gradient(black, blue 10%, white);}
+      10%  { background: radial-gradient(circle at 50%, #323232, #333 5%, #000, #454545 50%);}
+      20%  { background: #000; }
+      30%  { background: radial-gradient(ellipse at top, black, transparent),radial-gradient(ellipse at bottom, gray, transparent); }
+      33%   { background: #000;}
+      36%  { background: radial-gradient(ellipse at top, black, transparent),radial-gradient(ellipse at center, black, transparent)}
+      42% {background: radial-gradient(ellipse at center, #020202, transparent),radial-gradient(ellipse at center, #454545, #ffdede);}
+      45%   { background: #000;}
+      50% { background: radial-gradient(ellipse at center, #020202, transparent),radial-gradient(ellipse at bottom, #454545, #eee)}
+      55%   { background: #000;}
+      60% {background: radial-gradient(ellipse at center, black, transparent),radial-gradient(ellipse at bottom, gray, transparent)}
+      65%   { background: #000;}
+      70% { background: radial-gradient(ellipse at right, black, transparent),radial-gradient(ellipse at bottom, black, transparent);}
+      80%   { background: #000;}
+      85% { background: radial-gradient(ellipse at right, #353535, transparent),radial-gradient(ellipse at bottom, #eee, transparent)} 
+      90%   { background: #000;}
+      95% {background:  radial-gradient(ellipse at center, #323232, #eee),radial-gradient(ellipse at bottom, #323232, #333)}   
+      100% {background:  radial-gradient(ellipse at center, #000000, #454545 10%, #000000)}          
 } 
+
+.phase04 {
+  animation: four 20s infinite; 
+    -webkit-animation: four 20s infinite; 
+}
+.nophase04 {
+  animation: none; 
+  -webkit-animation: none; 
+}
+
+@keyframes four {
+      0%   { background: radial-gradient(ellipse at center, #fddddd, #454545 10%, #fddddd);
+            background-size: 100% 100%;}
+      5%   { background: radial-gradient(ellipse at center, #fddddd, #454545 10%, #fddddd);
+              background-size: 60% 300%;}
+      10%   { background: radial-gradient(ellipse at center, #fddddd, #eee 10%, #fddddd);
+            background-size: 100% 100%;}
+      20%   { background: radial-gradient(ellipse at top, #fddddd, #eee 100%, #fddddd);
+              background-size: 10% 10%; }
+      22%   { background: background: radial-gradient(ellipse at top,  #eee, #eee 10%, #fddddd 10%);
+            background-size: 100% 10%;}
+      26%   { background: radial-gradient(ellipse at top, #eee, #fddddd 10%, #eee 10%);
+              background-size: 100% 10%;}
+      30%   { background: radial-gradient(ellipse at top, #eee, #fddddd 40%, #fddddd);
+              background-size: 10% 100%;}
+      35%   { background: radial-gradient(ellipse at top, #eee, #fddddd 40%, #eee);
+              background-size: 10% 100%;}
+      40%   { background: radial-gradient(ellipse at center, #eee, #fddddd 10%, #eee 10%);}
+      45%   { background: radial-gradient(ellipse at center, #eee, #fddddd 10%, #fff 100%);}
+      65%   { background: radial-gradient(ellipse at center, #fff, #fddddd 10%, #fff 100%);
+              background-size: 10% 999%;
+              background-position: left;}
+      70%   { background: radial-gradient(ellipse at center, #fff, #fddddd 10%, #fff 100%);
+              background-size: 10% 999%;}
+      85%   { background: linear-gradient(#fff, #fddddd 10%, #fff 100%);
+              background-size: 10% 10%;}
+      90%   { background: linear-gradient(#fff, #fddddd 100%, #fff 10%);
+              background-size: 100% 1%;}
+      100%   { background: linear-gradient(#fff, #fddddd 100%, #fff 10%);}
+}
+
+@-webkit-keyframes four {
+      0%   { background: radial-gradient(ellipse at center, #fddddd, #454545 10%, #fddddd);
+            background-size: 100% 100%;}
+      5%   { background: radial-gradient(ellipse at center, #fddddd, #454545 10%, #fddddd);
+              background-size: 60% 300%;}
+      10%   { background: radial-gradient(ellipse at center, #fddddd, #eee 10%, #fddddd);
+            background-size: 100% 100%;}
+      20%   { background: radial-gradient(ellipse at top, #fddddd, #eee 100%, #fddddd);
+              background-size: 10% 10%; }
+      22%   { background: background: radial-gradient(ellipse at top,  #eee, #eee 10%, #fddddd 10%);
+            background-size: 100% 10%;}
+      26%   { background: radial-gradient(ellipse at top, #eee, #fddddd 10%, #eee 10%);
+              background-size: 100% 10%;}
+      30%   { background: radial-gradient(ellipse at top, #eee, #fddddd 40%, #fddddd);
+              background-size: 10% 100%;}
+      35%   { background: radial-gradient(ellipse at top, #eee, #fddddd 40%, #eee);
+              background-size: 10% 100%;}
+      40%   { background: radial-gradient(ellipse at center, #eee, #fddddd 10%, #eee 10%);}
+      45%   { background: radial-gradient(ellipse at center, #eee, #fddddd 10%, #fff 100%);}
+      65%   { background: radial-gradient(ellipse at center, #fff, #fddddd 10%, #fff 100%);
+              background-size: 10% 999%;
+              background-position: left;}
+      70%   { background: radial-gradient(ellipse at center, #fff, #fddddd 10%, #fff 100%);
+              background-size: 10% 999%;}
+      85%   { background: linear-gradient(#fff, #fddddd 10%, #fff 100%);
+              background-size: 10% 10%;}
+      90%   { background: linear-gradient(#fff, #fddddd 100%, #fff 10%);
+              background-size: 100% 1%;}
+      100%   { background: linear-gradient(#fff, #fddddd 100%, #fff 10%);}
+}
+

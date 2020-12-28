@@ -16,9 +16,7 @@ function public_or_private ([color,number, size]) {
 x = document.querySelector("#circle01");
 
 // — PUBLIC PRIVATE —
-
-// removing x.style.backgroundColor=color 
-// as it has no effect if x='iframe' 
+// x can be any element
 
 function public_or_private ([number,size]) { 
 	if (x.style.display=="none") { 
@@ -34,6 +32,8 @@ function public_or_private ([number,size]) {
 
 
 // — BREATHING —
+// x can be any element
+
 function breathing([size]) {
 	if ( x.style.display=="none") 
     { (x.style.display="inline") } 
@@ -45,6 +45,8 @@ function breathing([size]) {
 
 
 // — MORPHING —
+// x has to be a shape
+
 function morphing () {
 		var morDiv = document.querySelector("#circle01");
  	 		if (morDiv.className == 'otherthan') {
@@ -58,6 +60,8 @@ function morphing () {
 }
 
 // — TRANSLATING —
+// x can be any element
+
 function translating () {
  	 		if (x.className == 'sliding') {
     	x.className = 'noslide';  } 
@@ -70,6 +74,8 @@ function translating () {
 	}
 
 // — DECENTERING —
+// x can be any element
+
 function decentering ([deg]) {    
     if (x.style.transform == "") 
     	{ x.style.transform = "skew(" + deg + "deg)";
@@ -81,7 +87,8 @@ function decentering ([deg]) {
 
 
 // — EXPANDING THE VOID —
-// here we can keep this querySelector as its the only place it should apply;
+// x is text
+
 function expanding_the_void ([number]) {
 	if (document.querySelector("#text").style.letterSpacing=="") {
 		 (document.querySelector("#text").style.letterSpacing=  number + "px")
@@ -92,18 +99,69 @@ function expanding_the_void ([number]) {
 };
 
 
-// — DISSOLVING —
-function dissolving () {
-		var disDiv = document.querySelector("html");
-	 	 		if (disDiv.className == 'colouring') {
-	    disDiv.className = 'nocolouring';
-	  			} else {
-	    disDiv.className = 'colouring';
-	  	}
-	console.log('dissolving ()');
-	}
+// — DISSOLVING — gray pink dark blue
+// x can be shape or background
+
+colors = new Array("#000", "#FFF", "#fcfcfc", "#adadad", "#f6efef")
+colorIndex = 0
+idInterval = 0
+
+
+function dissolving() {
+  vazio = setInterval(function(){
+  document.querySelector("html").style.background = colors[colorIndex];
+  colorIndex = (colorIndex + 1) % colors.length;},6000);
+  console.log('dissolving ()');
+
+}
+
+// — CIRCUMSCRIBING —
+// x is background, can also be shape
+
+function circumscribing_phase01 () {
+    var disDiv = document.querySelector("html");
+        if (disDiv.className == 'phase01') {
+      disDiv.className = 'nophase01';
+          } else {
+      disDiv.className = 'phase01';
+      }
+  console.log('circumscribing_phase01 ()');
+}
+
+function circumscribing_phase02 () {
+    var disDiv = document.querySelector("html");
+        if (disDiv.className == 'phase02') {
+      disDiv.className = 'nophase02';
+          } else {
+      disDiv.className = 'phase02';
+      }
+  console.log('circumscribing_phase02 ()');
+}
+
+function circumscribing_phase03 () {
+    var disDiv = document.querySelector("html");
+        if (disDiv.className == 'phase03') {
+      disDiv.className = 'nophase03';
+          } else {
+      disDiv.className = 'phase03';
+      }
+  console.log('circumscribing_phase03 ()');
+}
+
+function circumscribing_phase04 () {
+    var disDiv = document.querySelector("html");
+        if (disDiv.className == 'phase04') {
+      disDiv.className = 'nophase04';
+          } else {
+      disDiv.className = 'phase04';
+      }
+  console.log('circumscribing_phase04 ()');
+}
+
 
 // ROTATING
+// x can be any element
+
 function vicious_circle([deg]) {
 	if ( x.style.display=="none") 
     { (x.style.display="inline") } 
@@ -115,7 +173,9 @@ function vicious_circle([deg]) {
 }
 
 
-// CIRCULATING
+// — CIRCULATING —
+// x can div for text array
+
 var delay="10"; 
 var count='0';
 var Texts=new Array();
@@ -159,11 +219,11 @@ circulating()
 
 // ORBITING 
 // not sure if we need to toggle here — we could keep this one always active?
+// x here is iframe
 
 var dance = new Array(
 	"https://www.google.com/search?q=public+sphere&newwindow=1&tbs=ic:gray,sur:fc&tbm=isch&source=lnt&sa=X&ved=0ahUKEwjWjdyy8M3bAhUFe8AKHQTgBEcQpwUIIA&biw=1275&bih=947&dpr=2",
   "https://www.google.com/search?q=equidistant&tbm=isch&tbs=ic:gray%2Csur:fc&hl=en&sa=X&ved=0CAEQpwVqFwoTCMjhtcrpz-0CFQAAAAAdAAAAABAD&biw=1575&bih=829",
-  "https://upload.wikimedia.org/wikipedia/commons/0/07/Sphere_and_Ball.png",
 	"https://www.google.com/search?num=50&newwindow=1&source=hp&ei=Y5ofW9HmOIKH6ATV2JCgBQ&q=void&oq=void&gs_l=psy-ab.3..0i67k1j0l7j0i10k1j0.3947.4297.0.4425.6.5.0.0.0.0.104.366.3j1.5.0....0...1c.1.64.psy-ab..1.5.484.6..35i39k1.118.tOlyNKxgiSY", 	
 	"https://www.google.com/search?q=spinning&newwindow=1&tbm=nws&source=lnms&sa=X&ved=0ahUKEwiAita8783bAhWFTcAKHTfJCiMQ_AUIDSgE&biw=1275&bih=947&dpr=2", 
 	"https://www.google.com/search?q=spinning+jenny&newwindow=1&tbm=isch&source=lnt&tbs=ic:gray&sa=X&ved=0ahUKEwidsujk783bAhUhCMAKHb1hBlgQpwUIIA&biw=1275&bih=947&dpr=2",    
@@ -184,7 +244,7 @@ function from_orbit_to_orbit() {
 	noOrbit = setInterval(function() {
 		danceIndex = (danceIndex + 1) % dance.length;
 		document.getElementById("stage01").src = dance[danceIndex];
-	},10000);
+	},15000);
 	console.log('from_orbit_to_orbit ()');
 }
 
@@ -193,8 +253,6 @@ function no_orbit (){
 	    clearInterval(noOrbit);
 	    console.log('no_orbit ()');
 }
-
-
 
 
 
@@ -299,6 +357,10 @@ dancerVocabulary["dissolving"] = x => dissolving ()
 dancerVocabulary["vicious_circle"] = x => vicious_circle ()
 dancerVocabulary["circulating"] = x => circulating ()
 dancerVocabulary["from_orbit_to_orbit"] = x => from_orbit_to_orbit ()
+dancerVocabulary["circumscribing_phase01"] = x => circumscribing_phase01 ()
+dancerVocabulary["circumscribing_phase02"] = x => circumscribing_phase02 ()
+dancerVocabulary["circumscribing_phase03"] = x => circumscribing_phase03 ()
+dancerVocabulary["circumscribing_phase04"] = x => circumscribing_phase04 ()
 
 dancerVocabulary["chance_dance"] = x => chance_dance ()
 
