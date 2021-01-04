@@ -277,6 +277,62 @@ vocabulary = {
               }, time);
            })
    }
+   , "circumscribing_phase01": {
+       "DOM":
+           ((time) => { Tone.Draw.schedule(() => {
+              console.log("dancer5: circumscribing ()  \n ", Tone.Transport.position);
+              // joana's "morphing code"
+              var disDiv = document.querySelector("html");
+              if (disDiv.className == 'phase01') {
+                disDiv.className = 'nophase01';
+              } else {
+                disDiv.className = 'phase01';
+                }
+              }, time);
+           })
+   }
+   , "circumscribing_phase02": {
+       "DOM":
+           ((time) => { Tone.Draw.schedule(() => {
+              console.log("dancer5: circumscribing ()  \n ", Tone.Transport.position);
+              // joana's "morphing code"
+              var disDiv = document.querySelector("html");
+              if (disDiv.className == 'phase02') {
+                disDiv.className = 'nophase02';
+              } else {
+                disDiv.className = 'phase02';
+                }
+              }, time);
+           })
+   }
+   , "circumscribing_phase03": {
+       "DOM":
+           ((time) => { Tone.Draw.schedule(() => {
+              console.log("dancer5: circumscribing ()  \n ", Tone.Transport.position);
+              // joana's "morphing code"
+              var disDiv = document.querySelector("html");
+              if (disDiv.className == 'phase03') {
+                disDiv.className = 'nophase03';
+              } else {
+                disDiv.className = 'phase03';
+                }
+              }, time);
+           })
+   }
+   , "circumscribing_phase04": {
+       "DOM":
+           ((time) => { Tone.Draw.schedule(() => {
+              console.log("dancer5: circumscribing ()  \n ", Tone.Transport.position);
+              // joana's "morphing code"
+              var disDiv = document.querySelector("html");
+              if (disDiv.className == 'phase04') {
+                disDiv.className = 'nophase04';
+              } else {
+                disDiv.className = 'phase04';
+                }
+              }, time);
+           })
+   }
 }
 
 // use this to see all of the registered vocabulary
@@ -291,6 +347,7 @@ p.newdancer('dancer1')
 p.newdancer('dancer2')
 p.newdancer('dancer3')
 p.newdancer('dancer4')
+p.newdancer('dancer5')
 
 p.dancerNames()
 
@@ -360,6 +417,26 @@ p.dancers.dancer4.part.loopEnd = "2m";
 // p.dancers.dancer4.part.callback = vocabulary[""].DOM
 
 // starts and stops DANCERS 1 / 2 / 3
+
+//--------------------------------------------------------------------------
+// dancer5
+
+p.dancers.dancer5.rhythm = m.rhythms.rhythm2.slice() 
+p.dancers.dancer5.part = new Tone.Part(
+    ((time) => { 
+        targetDancer = pick( (Object.keys(p.dancers)).filter(x => x !="dancer5"));
+        partToggle(p.dancers[targetDancer].part);
+        console.log("dancer5 has toggled " + targetDancer + ":", Tone.Transport.position) 
+    })
+    , beatsToEvents(p.dancers.dancer5.rhythm)
+)
+p.dancers.dancer5.part.loop = true;
+p.dancers.dancer5.part.loopEnd = "2m";
+
+
+p.dancers.dancer5.part.callback = vocabulary["circumscribing_phase04"].DOM
+
+// DANCER 03 vocab: "circumscribing_phase01", "circumscribing_phase02", "circumscribing_phase03", "circumscribing_phase04",
 
 //--------------------------------------------------------------------------
 // bind the interface
