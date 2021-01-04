@@ -13,7 +13,7 @@ function public_or_private ([color,number, size]) {
 
 
 // IF SETTING A VARIABLE
-x = document.querySelector("#stage01");
+x = document.querySelector(".stage01");
 y = document.querySelector(".stage02");
 z = document.querySelector(".stage03");
 
@@ -37,8 +37,8 @@ function public_or_private ([number,size]) {
 // x can be any element
 
 function breathing([number,size]) {
-		x.style.opacity=number;
-		x.style.transform=`scale(${size})`;
+		document.querySelector("#stage01").style.opacity=number;
+		document.querySelector(".stage01").style.transform=`scale(${size})`;
 
     console.log('breathing ()');
 }
@@ -49,13 +49,13 @@ function breathing([number,size]) {
 
 function morphing () {
 	y.classList.toggle('otherthan');
- 	 	// 	if (y.toggleClass == 'otherthan') {
+ 	// 	if (y.toggleClass == 'otherthan') {
     // 	y.toggleClass = 'same';
   		// 	} 
   		// 	else {
     // 	y.toggleClass = 'otherthan';
   		// }
-    // console.log('morphing ()');
+    console.log('morphing ()');
 }
 
 // — DISSOLVING —
@@ -74,14 +74,15 @@ function dissolving () {
 // x can be any element
 
 function translating () {
- 	 		if (y.className == 'sliding') {
-    	y.className = 'noslide';  } 
-    		else {
-    	y.className = 'sliding';
-  		}
-  		return 'translating';
+	y.classList.toggle('sliding');
+ 	// 	if (y.className == 'sliding') {
+    // 	y.className = 'noslide';  } 
+    // 		else {
+    // 	y.className = 'sliding';
+  		// }
+  		// return 'translating';
     console.log('translating ()');
-	}
+}
 
 // — DECENTERING —
 // x can be any element
@@ -109,13 +110,10 @@ function expanding_the_void ([number]) {
 };
 
 
-// ROTATING
+// — ROTATING —
 // x can be any element
 
 function vicious_circle([deg]) {
-	if ( x.style.display=="none") 
-    { (x.style.display="inline") } 
-	else { x.style.display="none" }
 	x.style.transform = "rotateY(" + deg + "deg)";
 	deg = (deg + 10) % 360;
 
@@ -166,7 +164,7 @@ function circulating(){
 
 
 
-// ORBITING 
+// — ORBITING —
 // not sure if we need to toggle here — we could keep this one always active?
 // x here is iframe
 

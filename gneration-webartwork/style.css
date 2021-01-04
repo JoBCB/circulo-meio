@@ -68,8 +68,48 @@ body{
     top: 0;
     left: 0;
     box-shadow: 2px 20px 100px #323232;
-    display: none;
     z-index: 80;
+}
+
+.stage01::after {
+	content: 'DANCER01';
+	background-color: #000;
+    color: #FFF;
+    font-size: 1rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1rem;
+    padding: 0.5rem;
+    line-height: 1rem;
+    z-index: 99 !important;
+    opacity: 1 !important;
+    box-shadow: 5px 5px 20px #323232;
+}
+
+.stage03::after {
+	content: 'DANCER03';
+}
+.stage02::after {
+	content: 'DANCER02';
+}
+
+.stage02::after, .stage03::after {
+	background-color: #000;
+    color: #FFF;
+    font-size: 1rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    margin: 1rem;
+    padding: 0.5rem;
+    line-height: 1rem;
+    z-index: 99 !important;
+    opacity: 1 !important;
+    box-shadow: 5px 5px 20px #323232;
 }
 .circle {
     position: absolute;
