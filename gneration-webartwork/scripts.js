@@ -11,6 +11,14 @@ function public_or_private ([color,number, size]) {
 }
 // public_or_private (["black", "0.5", "2"])
 
+// CONSOLE
+
+function vocabulary ([number,size]) {
+		document.querySelector("#console").style.opacity=number;
+		document.querySelector(".stage01").style.transform=`scale(${size})`;
+
+    console.log('vocabulary ()');
+}
 
 // IF SETTING A VARIABLE
 x = document.querySelector(".stage01");
@@ -161,7 +169,6 @@ function circulating(){
 
         console.log('circulating ()');
 } 
-
 
 
 // — ORBITING —
