@@ -60,7 +60,7 @@ body{
     font-weight: bold;
     word-spacing: 1vw;
 }
-#circle01 {
+.stage02 {
     position: absolute;
     border-radius: 50% 50%;
     width: 100vw;
@@ -71,15 +71,28 @@ body{
     display: none;
     z-index: 80;
 }
+.circle {
+    position: absolute;
+    border-radius: 50% 50%;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 20px 100px #323232;
+    z-index: 80;
+}
 
-#triangle {
+.triangle {
+	z-index: 99;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 0;
     height: 0;
     border-left: 50vw solid transparent;
     border-right: 50vw solid transparent;
     border-top: 100vw solid black;
 }
-
 
 #diamond {
       width: 0;
@@ -153,11 +166,11 @@ body{
   animation:        slide 10s infinite alternate; /* IE 10+, Fx 29+ */    
 }
 .noslide {
-  animation: slide 10s ease-in-out infinite; 
-  -webkit-animation: slide 10s infinite alternate; /* Safari 4+ */
-  -moz-animation:    slide 10s infinite alternate; /* Fx 5+ */
-  -o-animation:      slide 10s infinite alternate; /* Opera 12+ */
-  animation:         slide 10s infinite alternate; /* IE 10+, Fx 29+ */    
+  animation: none; 
+  -webkit-animation:  none; /* Safari 4+ */
+  -moz-animation:  none; /* Fx 5+ */
+  -o-animation:  none; /* Opera 12+ */
+  animation:   none; /* IE 10+, Fx 29+ */    
 }
 
 @keyframes slide {

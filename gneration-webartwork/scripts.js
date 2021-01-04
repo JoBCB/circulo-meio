@@ -13,17 +13,19 @@ function public_or_private ([color,number, size]) {
 
 
 // IF SETTING A VARIABLE
-x = document.querySelector("#circle01");
+x = document.querySelector("#stage01");
+y = document.querySelector(".stage02");
+z = document.querySelector(".stage03");
 
 // — PUBLIC PRIVATE —
 // x can be any element
 
 function public_or_private ([number,size]) { 
-	if (x.style.display=="none") { 
-		(x.style.display="inline") } 
-		else { (x.style.display="none") }; 
-		x.style.opacity=number;
-		x.style.transform=`scale(${size})`;
+	if (y.style.display=="none") { 
+		(y.style.display="inline") } 
+		else { (y.style.display="none") }; 
+		y.style.opacity=number;
+		y.style.transform=`scale(${size})`;
 
     console.log('public_or_private ()');
 }
@@ -34,11 +36,9 @@ function public_or_private ([number,size]) {
 // — BREATHING —
 // x can be any element
 
-function breathing([size]) {
-	if ( x.style.display=="none") 
-    { (x.style.display="inline") } 
-	else { x.style.display="none" }
-	x.style.transform=`scale(${size})`;
+function breathing([number,size]) {
+		x.style.opacity=number;
+		x.style.transform=`scale(${size})`;
 
     console.log('breathing ()');
 }
@@ -48,28 +48,38 @@ function breathing([size]) {
 // x has to be a shape
 
 function morphing () {
-		var morDiv = document.querySelector("#circle01");
- 	 		if (morDiv.className == 'otherthan') {
-    	morDiv.className = 'same';
+	y.classList.toggle('otherthan');
+ 	 	// 	if (y.toggleClass == 'otherthan') {
+    // 	y.toggleClass = 'same';
+  		// 	} 
+  		// 	else {
+    // 	y.toggleClass = 'otherthan';
+  		// }
+    // console.log('morphing ()');
+}
+
+// — DISSOLVING —
+// x has to be a shape
+function dissolving () {
+ 	 		if (y.className == 'triangle') {
+    	y.className = 'stage02';
   			} 
   			else {
-    	morDiv.className = 'otherthan';
+    	y.className = 'triangle';
   		}
-
-    console.log('morphing ()');
+    console.log('dissolving ()');
 }
 
 // — TRANSLATING —
 // x can be any element
 
 function translating () {
- 	 		if (x.className == 'sliding') {
-    	x.className = 'noslide';  } 
+ 	 		if (y.className == 'sliding') {
+    	y.className = 'noslide';  } 
     		else {
-    	x.className = 'sliding';
+    	y.className = 'sliding';
   		}
   		return 'translating';
-
     console.log('translating ()');
 	}
 
@@ -97,66 +107,6 @@ function expanding_the_void ([number]) {
 	}
     console.log('expanding_the_void  ()');
 };
-
-
-// — DISSOLVING — gray pink dark blue
-// x can be shape or background
-
-colors = new Array("#000", "#FFF", "#fcfcfc", "#adadad", "#f6efef")
-colorIndex = 0
-idInterval = 0
-
-
-function dissolving() {
-  vazio = setInterval(function(){
-  document.querySelector("html").style.background = colors[colorIndex];
-  colorIndex = (colorIndex + 1) % colors.length;},6000);
-  console.log('dissolving ()');
-
-}
-
-// — CIRCUMSCRIBING —
-// x is background, can also be shape
-
-function circumscribing_phase01 () {
-    var disDiv = document.querySelector("html");
-        if (disDiv.className == 'phase01') {
-      disDiv.className = 'nophase01';
-          } else {
-      disDiv.className = 'phase01';
-      }
-  console.log('circumscribing_phase01 ()');
-}
-
-function circumscribing_phase02 () {
-    var disDiv = document.querySelector("html");
-        if (disDiv.className == 'phase02') {
-      disDiv.className = 'nophase02';
-          } else {
-      disDiv.className = 'phase02';
-      }
-  console.log('circumscribing_phase02 ()');
-}
-
-function circumscribing_phase03 () {
-    var disDiv = document.querySelector("html");
-        if (disDiv.className == 'phase03') {
-      disDiv.className = 'nophase03';
-          } else {
-      disDiv.className = 'phase03';
-      }
-  console.log('circumscribing_phase03 ()');
-}
-
-function circumscribing_phase04 () {
-    var disDiv = document.querySelector("html");
-        if (disDiv.className == 'phase04') {
-      disDiv.className = 'nophase04';
-          } else {
-      disDiv.className = 'phase04';
-      }
-  console.log('circumscribing_phase04 ()');
-}
 
 
 // ROTATING
@@ -213,7 +163,6 @@ function circulating(){
 
         console.log('circulating ()');
 } 
-circulating()
 
 
 
@@ -255,6 +204,51 @@ function no_orbit (){
 }
 
 
+// — CIRCUMSCRIBING —
+// setting the mood / phases
+
+function circumscribing_phase01 () {
+    var disDiv = document.querySelector("html");
+        if (disDiv.className == 'phase01') {
+      disDiv.className = 'nophase01';
+          } else {
+      disDiv.className = 'phase01';
+      }
+  console.log('circumscribing_phase01 ()');
+}
+
+function circumscribing_phase02 () {
+    var disDiv = document.querySelector("html");
+        if (disDiv.className == 'phase02') {
+      disDiv.className = 'nophase02';
+          } else {
+      disDiv.className = 'phase02';
+      }
+  console.log('circumscribing_phase02 ()');
+}
+
+function circumscribing_phase03 () {
+    var disDiv = document.querySelector("html");
+        if (disDiv.className == 'phase03') {
+      disDiv.className = 'nophase03';
+          } else {
+      disDiv.className = 'phase03';
+      }
+  console.log('circumscribing_phase03 ()');
+}
+
+function circumscribing_phase04 () {
+    var disDiv = document.querySelector("html");
+        if (disDiv.className == 'phase04') {
+      disDiv.className = 'nophase04';
+          } else {
+      disDiv.className = 'phase04';
+      }
+  console.log('circumscribing_phase04 ()');
+}
+
+
+
 
 // CHANCE DANCE — does it still make sense?
 function chance_dance() {   
@@ -271,13 +265,13 @@ function chance_dance() {
             "translating": translating,   
             "decentering":decentering,   
             "expanding_the_void": expanding_the_void,
-            "dissolving":center,
+            "dissolving":dissolving,
             "vicious_circle": vicious_circle,
-            "dissolving": interrupt, 
             "from_orbit_to_orbit": from_orbit_to_orbit,
             "chance_dance": chance_dance
 
 }  
+
 
 // REVISED DANCERS.JS 
 // prev v.: https://github.com/JoBCB/circulo-meio/blob/master/new-files-collection/dancers.js
