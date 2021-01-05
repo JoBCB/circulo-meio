@@ -105,8 +105,18 @@ function decentering ([deg]) {
 }
 
 
-// — EXPANDING THE VOID —
+// — EXPANDING THE VOID — NEW V.
 // x is text
+
+function expanding_the_void ([number, size]) {
+    document.querySelector("#text").style.letterSpacing=  number + "px";
+    document.querySelector("#text").style.transform=`scale(${size})`;
+
+    console.log('expanding_the_void  ()');
+};
+
+// — EXPANDING THE VOID —
+// old version
 
 function expanding_the_void ([number]) {
 	if (document.querySelector("#text").style.letterSpacing=="") {
