@@ -50,6 +50,9 @@ body{
 #stage01 {
     z-index: 1;  
 }
+.stage01 {
+      margin-top: -36px;
+}
 #text {
     font-size: 8vw;
     line-height: 9.5vw;  
@@ -231,8 +234,8 @@ body{
 .phase01 {
   background-size: 300% 300%;
    background-image: radial-gradient(ellipse farthest-corner at 50% 50% , #fddddd 0%, #fddddd 60%, #454545 65%);
-  animation: one 20s  infinite;
-  -webkit-animation: one 20s infinite;   
+  animation: one 60s  infinite;
+  -webkit-animation: one 60s infinite;   
 }
 
 .nophase01{
@@ -286,8 +289,8 @@ body{
 
 
 .phase02 {
-  animation: two 20s infinite; 
-    -webkit-animation: two 20s infinite; 
+  animation: two 60s infinite; 
+    -webkit-animation: two 60s infinite; 
 }
 .nophase02 {
   animation: none; 
@@ -347,8 +350,8 @@ body{
 }
 
 .phase03 {
-  animation: three 20s infinite; 
-    -webkit-animation: three 20s infinite; 
+  animation: three 30s infinite; 
+    -webkit-animation: three 30s infinite; 
 }
 .nophase03 {
   animation: none; 
@@ -398,8 +401,8 @@ body{
 } 
 
 .phase04 {
-  animation: four 20s infinite; 
-    -webkit-animation: four 20s infinite; 
+  animation: four 30s infinite; 
+    -webkit-animation: four 30s infinite; 
 }
 .nophase04 {
   animation: none; 
