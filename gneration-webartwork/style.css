@@ -21,7 +21,7 @@ body{
   opacity: 0.9;
   position: absolute;
   z-index: 99;
-  font-size: 2.5vw;
+  font-size: 2vw;
   line-height: 3vw;
   max-width: 35vw;
   display: flex;
@@ -51,7 +51,8 @@ body{
     z-index: 1;  
 }
 .stage01 {
-      margin-top: -36px;
+  margin-top: 0px;
+  filter: grayscale(100%);
 }
 #text {
     font-size: 8vw;
@@ -155,6 +156,16 @@ body{
       border: 50vw solid transparent;
       border-top-color: #000;
 }
+
+.rotating {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotateY(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotateY(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotateY(360deg); transform:rotateY(360deg); } }
 
 .otherthan {
 	animation: morph  22s  linear infinite;

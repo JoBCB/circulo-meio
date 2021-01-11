@@ -37,12 +37,8 @@ vocabulary["breathing"].DOM =
 vocabulary["decentering"] = {}
 vocabulary["decentering"].DOM =
      ((time,value) => { Tone.Draw.schedule(() => {
-	    if (x.style.transform == "") 
-	    	{ x.style.transform = "skew(" + deg + "deg)";
-	            deg = (deg + 10) % 360; }
-	    else  { x.style.transform = ""; }
-
-   		console.log('Dancer 02: decentering ()');
+      x.style.transform = `skew(${value.args[0]})`;  // "skew(" + deg + "deg)";
+   		console.log('Dancer 01: decentering ()');
          }, time);
 
      })
@@ -51,13 +47,8 @@ vocabulary["decentering"].DOM =
 vocabulary["vicious_circle"] = {}
 vocabulary["vicious_circle"].DOM =
      ((time,value) => { Tone.Draw.schedule(() => {
-	    deg = 10;
-	    stopX = setInterval(function() {
-	    x.style.transform = "rotateY(" + deg + "deg)";
-	    deg = (deg + 10) % 360
-	    }, 100);
-	// clearInterval(stopX);
-   		console.log('Dancer 02: vicious_circle ()');
+      x.classList.toggle('rotating');
+   		console.log('Dancer 01: vicious_circle ()');
          }, time);
 
      })
@@ -197,7 +188,7 @@ Object.keys(vocabulary)
 	changeVocab("dancer1", vocabulary["breathing"].DOM)
 
 	// phase 02
-	changeRhythmAndArgs("dancer1",[0,14,31], [["0.5", "3"],["0.9", "1"]])
+	changeRhythmAndArgs("dancer1",[0,5,14,17,20], [["50deg"],["0deg"],["-100deg"]])
 	changeVocab("dancer1", vocabulary["decentering"].DOM)
 
 	// phase 03
@@ -206,8 +197,8 @@ Object.keys(vocabulary)
 
 	// phase 04
 
-	changeRhythmAndArgs("dancer1",[0,14,31], [["0.5", "3"],["0.9", "1"]])
-	changeVocab("dancer1", vocabulary["vicious_circle"].DOM)
+	// changeRhythmAndArgs("dancer1",[0,3,20,28,30,31], [[]])
+	// changeVocab("dancer1", vocabulary["vicious_circle"].DOM)
 
 //--------------------------------------------------------------------------
 // Dancer 02 — > stage 02 (shape)
@@ -238,11 +229,45 @@ Object.keys(vocabulary)
 	p.dancers.dancer3.part.loop = true;
 	p.dancers.dancer3.part.loopEnd = "16m";
 
-	changeRhythmAndArgs("dancer3",[0,1,8,11], [["200", "5"],["10", "1"]])
+	changeRhythmAndArgs("dancer3",[0,1,8,11,14,15], [["200px", "10"],["5px", "1"], ["5px", "5"],])
 	changeVocab("dancer3", vocabulary["expanding_the_void"].DOM)
 
 //--------------------------------------------------------------------------
 // Dancer 04 — > manages phases for dancers 01/ 02 / 03
+
+
+//--------------------------------------------------------------------------
+// Dancer 05 — > sets the phases (changes background) — 60s
+  // phase 01
+  // opacity, scale: add more steps up to 8 ["0.7", "1"]
+  p.dancers.dancer5.rhythm = m.rhythms.rhythm2.slice() 
+  p.dancers.dancer5.part = new Tone.Part(
+      ((time) => { 
+          targetDancer = pick( (Object.keys(p.dancers)).filter(x => x !="dancer5"));
+          partToggle(p.dancers[targetDancer].part);
+          console.log("dancer5 has toggled " + targetDancer + ":", Tone.Transport.position) 
+      })
+      , beatsToEvents(p.dancers.dancer2.rhythm)
+  )
+
+  p.dancers.dancer5.part.loop = true;
+  p.dancers.dancer5.part.loopEnd = "32m";
+ 
+  // phase 01   
+  changeRhythmAndArgs("dancer5",[0], [[]])
+  changeVocab("dancer5", vocabulary["circumscribing_phase01"].DOM)
+
+  // phase 02  
+  changeRhythmAndArgs("dancer5",[0], [[]])
+  changeVocab("dancer5", vocabulary["circumscribing_phase02"].DOM)
+
+  // phase 03 
+  // changeRhythmAndArgs("dancer5",[0], [[]])
+  // changeVocab("dancer5", vocabulary["circumscribing_phase03"].DOM)
+
+  // phase 04
+  // changeRhythmAndArgs("dancer5",[0], [[]])
+  // changeVocab("dancer5", vocabulary["circumscribing_phase04"].DOM)
 
 
 
@@ -255,7 +280,7 @@ Object.keys(vocabulary)
 	        partToggle(p.dancers[targetDancer].part);
 	        console.log("dancer6 has toggled " + targetDancer + ":", Tone.Transport.position) 
 	    })
-	    , beatsToEvents(p.dancers.dancer4.rhythm)
+	    , beatsToEvents(p.dancers.dancer2.rhythm)
 	)
 
 	p.dancers.dancer6.part.loop = true;

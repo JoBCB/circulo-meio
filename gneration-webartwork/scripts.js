@@ -13,11 +13,11 @@ function public_or_private ([color,number, size]) {
 
 // CONSOLE
 
-function vocabulary ([number,size]) {
+function sequencing ([number,size]) {
 		document.querySelector("#console").style.opacity=number;
 		document.querySelector(".stage01").style.transform=`scale(${size})`;
 
-    console.log('vocabulary ()');
+    console.log('sequencing ()');
 }
 
 // IF SETTING A VARIABLE
@@ -128,7 +128,13 @@ function expanding_the_void ([number]) {
 };
 
 
-// — ROTATING —
+// — ROTATING  — NEW V.
+function vicious_circle() {
+  x.classList.toggle('rotating');
+  console.log('vicious_circle ()');
+}
+
+// — ROTATING  
 // x can be any element
 
 function vicious_circle([deg]) {
