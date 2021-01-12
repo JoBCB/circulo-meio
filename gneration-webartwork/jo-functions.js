@@ -184,20 +184,20 @@ Object.keys(vocabulary)
 	// phase 01
 	p.dancers.dancer1.part.loopEnd = "32m";
 
-	changeRhythmAndArgs("dancer1",[0,14,31], [["0.5", "3"],["0.9", "1"]])
+	changeRhythmAndArgs("dancer1",[0,5,14,17,31], [["0.5", "3"],["0.9", "1"],["1", "0.5"],["0.4", "1"]])
 	changeVocab("dancer1", vocabulary["breathing"].DOM)
 
 	// phase 02
-	changeRhythmAndArgs("dancer1",[0,5,14,17,20,23,29,31], [["50deg"],["0deg"],["-100deg"],["600deg"]])
-	changeVocab("dancer1", vocabulary["decentering"].DOM)
+	// changeRhythmAndArgs("dancer1",[0,5,14,17,20,23,29,31], [["50deg"],["0deg"],["-100deg"],["600deg"]])
+	// changeVocab("dancer1", vocabulary["decentering"].DOM)
 
-	// phase 03
-	changeRhythmAndArgs("dancer1",[0,14,31], [["0.5", "3"],["0.9", "1"]])
-	changeVocab("dancer1", vocabulary["breathing"].DOM)
+	// // phase 03
+	// changeRhythmAndArgs("dancer1",[0,14,31], [["0.5", "3"],["0.9", "1"]])
+	// changeVocab("dancer1", vocabulary["breathing"].DOM)
 
-	// phase 04
-	changeRhythmAndArgs("dancer1",[0,3,10,12,25,30], [[]])
-	changeVocab("dancer1", vocabulary["vicious_circle"].DOM)
+	// // phase 04
+	// changeRhythmAndArgs("dancer1",[0,3,10,12,25,30], [[]])
+	// changeVocab("dancer1", vocabulary["vicious_circle"].DOM)
 
 //--------------------------------------------------------------------------
 // Dancer 02 — > stage 02 (shape)
@@ -289,14 +289,19 @@ Object.keys(vocabulary)
 	p.dancers.dancer6.part.loop = true;
 	p.dancers.dancer6.part.loopEnd = "32m";
 
-	changeRhythmAndArgs("dancer6",[0,1,8,20,22], [["0.3", "2"],["1", "1"]])
+  // phase 01  
+	changeRhythmAndArgs("dancer6",[0,5,14,17,31], [["0.75", "1"],["0.35", "1"],["1", "3"],["0.5", "0.5"]])
 	changeVocab("dancer6", vocabulary["sequencing"].DOM)
 
-  // phase 03 
-  changeRhythmAndArgs("dancer6",[0,1,8,20,22], [["0.1", "2"],["0.6", "0.5"]])
-  changeVocab("dancer6", vocabulary["sequencing"].DOM)
+  // phase 02 
+  // changeRhythmAndArgs("dancer6",[0,1,8,20,22], [["0.3", "2"],["1", "1"]])
+  // changeVocab("dancer6", vocabulary["sequencing"].DOM)
 
-  // phase 04
-  changeRhythmAndArgs("dancer6",[0,1,8,20,22], [["0.3", "5"],["1", "0.5"]])
-  changeVocab("dancer6", vocabulary["sequencing"].DOM)
+  // // phase 03 
+  // changeRhythmAndArgs("dancer6",[0,1,8,20,22], [["0.1", "2"],["0.6", "0.5"]])
+  // changeVocab("dancer6", vocabulary["sequencing"].DOM)
+
+  // // phase 04
+  // changeRhythmAndArgs("dancer6",[0,1,8,20,22], [["0.3", "5"],["1", "0.5"]])
+  // changeVocab("dancer6", vocabulary["sequencing"].DOM)
 
