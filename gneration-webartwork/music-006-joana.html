@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>the stage is alive test doc</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.4.3/webcomponents-bundle.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet"/>
+	<script src="https://unpkg.com/tone@14.7.58/build/Tone.js"></script>
+    <script src="https://unpkg.com/total-serialism/build/ts.es5.min.js"></script>
+
+	<!-- Joana's links-->  
+	  <link rel="stylesheet" type="text/css" media="all" href="style.css"></link>
+	  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	  <script src="console.js"></script>
+</head>
+
+<body onload="from_orbit_to_orbit(); circulating();">
+
+    <!-- CONSOLE -->
+    <div id="console"></div>
+
+    <!-- BUTTONS -->
+ 
+	<tone-example label="test" style="position: absolute; top: 0; left: 0; z-index: 9999;">
+		<div slot="explanation">
+			testing looping melody, dancers, etc.
+			<br><br>
+		</div>
+		<div id="content">
+		    <button id="b1" type="button"> turn on audio </button>
+		    <button id="b2" type="button"> click to play </button>
+		    <button id="b3" type="button"> click to stop </button>
+		</div>
+	</tone-example>
+
+
+  	<!-- STAGE 01 -->
+
+	  <div class="stage01">
+	      <iframe  id="stage01"  title="news from the world wide web"
+	    width="100%" height="950" frameborder="0"  scrolling="yes"  margin="0" marginheight="0" marginwidth="0" src="https://www.google.com/"
+	    ></iframe>
+	  </div> 
+
+	<!-- STAGE 02 -->
+
+	  <div class="stage02"></div> 
+
+	<!-- STAGE 03 -->
+
+	  <p class="stage03" id="text"></p>
+
+
+	<script type="text/javascript">
+
+//--------------------------------------------------------------------------
+// algorithmic data tools
+// often to be used for generation of rhythms
+
+// import Timo Hoogland's Total Serialism library
+
+const t = TotalSerialism;
+
+// for lerp of floats use t.t.Generative.spreadInclusiveFloat
+
+let pick = inputArray => inputArray[Math.round((inputArray.length - 1) * Math.random())];
+
+let pickN = (n,inputArray) => {
+        let a = new Array(n);
+        a.fill(0,0,n);
+        let out = [];
+        a.forEach(i => out.push(pick(inputArray)));
+        return out }
+
+numArray = function (start,end) {
+    let output = [];
+    for(i = start; i <= end; i++) {output.push(i)};
+    return output
+}
+
+function low2HighSort (inputArray) { return inputArray.sort((a, b) => a - b)}
+
+function high2LowSort (inputArray) { return inputArray.sort((a, b) => b - a)}
+
+function takeN (inputArray, n) {
+    let outputArray = [];
+    for (let i = 0; i < n; i++)
+    { outputArray.push(inputArray[i%(inputArray.length)])};
+    return outputArray
+}
+
+function zip (a,b) {return a.map((x, i) => { return [x, b[i]]; })}
+
+function buildZip (a,b) {return a.map((x,i) => x.concat(b[i]))}
+
+class TimespanMap {
+    constructor(span,prop,vals) {
+        this.timespan = span;
+        this.proportionalTimes = prop;
+        this.calculatedTimes = prop.map(x => x * span);
+        this.values = vals;
+        }
+    lookup(time) {
+        let lookupTime = time%this.timespan;
+        filteredTime = this.calculatedTimes.filter(x => x < lookupTime);
+        if (filteredTime[0] == undefined) {filteredTime = [0]};
+        return this.values[(filteredTime.length - 1)]
+        }
+}
+
+function timespanMapLookup (tsm, time) {
+    let lookupTime = time%tsm.timespan;
+    let filteredTime = tsm.calculatedTimes.filter(x => x < lookupTime);
+    if (filteredTime[0] == undefined) {filteredTime = [0]};
+    return tsm.values[(filteredTime.length - 1)]
+}
+
+//--------------------------------------------------------------------------
+// tone.js convenience functions
+
+function beatToTransport (bs) { return "0:"+ bs + ":0" }
+
+function transportToEvent (x) { return {time: x}}
+
+function beatsToEvents (bs) {return bs.map(x => transportToEvent(beatToTransport(x)))}
+
+function replaceEventsWith (part, inputArray) {
+    part.clear(); 
+    inputArray.map(beatToTransport).map(x => transportToEvent(x)).forEach(x => part.add(x))
+    return
+}
+
+function replaceEventsWith2 (part, inputArray) {
+    part.clear(); 
+    inputArray.forEach(x => part.add(x))
+    return
+}
+
+function transportToBeat (t) {
+    ts = t.split(':').map(parseFloat);
+    beatsFromMeasures = ts[0] * 4;
+    beats = ts[1];
+    beatsFrom16s = ts[2]/4;
+    return beatsFromMeasures + beats + beatsFrom16s 
+}
+
+function inNMeasures (n) {
+    currentPosition = Tone.Transport.position;
+    ts = currentPosition.split(':');
+    currentMeasure = parseFloat(ts[0]);
+    return (currentMeasure + n) + ":0:0"
+}
+
+// warning: this is often too soon for Tone to process without an error 
+// calculation takes too long, 2 or more measures may be necessary
+// if so, use functions above
+
+function nextMeasure () {return inNMeasures(1)}
+
+function timesPlusArgs (times,args) {
+    events = beatsToEvents (times);
+    argsB = takeN (args,events.length);
+    argsC = argsB.map(x => {return {args: x}});   
+    return events.map((x,i) => Object.assign(x,argsC[i]))
+}
+
+//--------------------------------------------------------------------------
+// geometries data structures and basic functions
+
+class Performance {
+    constructor() {
+        this.dancers = {};
+        this.rhythms = {};
+        this.vocabulary = {};
+        }
+    dancerNames() {return Object.keys(this.dancers)}
+    rhythmNames() {return Object.keys(this.rhythms)}
+    vocabularyList() {return Object.keys(this.vocabulary)}
+    newdancer(dancer) {
+        console.log(`adding a new dancer called ${dancer}... `);
+        this.dancers[dancer] = new Dancer()
+        }
+//    start(dancer) {
+//        console.log(`starting ${dancer}... `);
+//        console.log(`details of ${dancer} are ${this.dancers.get(dancer)}... `);
+//        }
+//    pause(dancer) {
+//        console.log(`pausing ${dancer}... `);
+//        }
+//    stop(dancer) {
+//        console.log(`stopping ${dancer}... `);
+//        }
+}
+
+class Dancer {
+    constructor() {
+        this.part = undefined;
+        this.rhythm = undefined;
+        this.vocabulary = undefined;
+        this.output = undefined;
+        this.args = [];
+        }
+//    start(dancer) {
+//        console.log(`starting ${dancer}... `);
+//        this.part.start()
+//        }
+//    pause(dancer) {
+//        console.log(`pausing ${dancer}... `);
+//        }
+//    stop(dancer) {
+//        console.log(`stopping ${dancer}... `);
+//        }
+}
+
+// geometries functions to be made into methods of the classes above, most likely
+
+function startAll (transportTime) {
+    dNames = Object.keys(p.dancers);
+    dNames.forEach(x => p.dancers[x].part.start(transportTime)) 
+}
+
+function stopAll (transportTime) {
+    dNames = Object.keys(p.dancers);
+    dNames.forEach(x => p.dancers[x].part.stop(transportTime)) 
+}
+
+function partToggle (p) {
+    if (p.state == "stopped") 
+    {p.start(inNMeasures(2))}
+    else {p.stop(inNMeasures(2))}
+}
+
+function changeRhythmAndArgs (dancer, rhythm, args) {
+    let events = timesPlusArgs(rhythm,args);
+    let targetPart = p.dancers[dancer].part;
+    replaceEventsWith2(targetPart,events)
+}
+
+function changeVocab (dancer,vocab) {
+    let targetPart = p.dancers[dancer].part;
+    targetPart.callback = vocab
+    }
+
+
+//--------------------------------------------------------------------------
+// initiate storage of musical data
+// and populate it with initial data
+
+let m = {
+      args: {}
+    , motifs: {}
+    , rhythms: {}
+    , sequences: {}
+    , synths: {}
+    , samples: {}
+    , timespans: {}
+}
+
+m.motifs.riffA = ["A2","B2","E2","E#2","G3","A3","B3","E3","E#3","A4","B4","E4","E#4","G4","A5"];
+m.motifs.riffB = ["A1","B1"];
+m.motifs.riffC = ["A3","B3","E3","E#3","A4","B4","E4","E#4","G4","A5","B5","E5"];
+
+
+//var verb = new Tone.Reverb().toMaster();
+
+var verb = new Tone.JCReverb(0.4).toMaster();
+
+m.synths.synth01 = new Tone.Synth().connect(verb);
+m.synths.synth02 = new Tone.Synth().connect(verb);
+
+m.synths.synth03 = new Tone.Sampler({
+	urls: {
+		F5: "F5.mp3",
+	},
+	baseUrl: "./circuloSubtleDrum01/"
+}).connect(verb);
+m.synths.synth03.volume.value = -6;
+
+// the player
+m.synths.player1 = new Tone.Player({
+        url: "./circle-v1-edit-01.mp3",
+        loop: true,
+        loopStart: 0.0,
+        loopEnd: 0.7,
+        }).toDestination();
+
+function randomLoopPoints (p, minRange, maxRange) {
+   let range = (maxRange - minRange) * Math.random();
+   let bufDur = p._buffer.duration;
+   let startPoint = bufDur * Math.random();
+   let endPoint = undefined;
+   if (startPoint + range > bufDur) {endPoint = bufDur} else {endPoint = startPoint + range};
+   p.stop(); p.loopStart = startPoint; p.loopEnd = endPoint; p.start();
+   return {start: startPoint, end:endPoint}
+} 
+
+function retriggerLoop (p, loopPointsObject) {
+p.stop(); p.loopStart = loopPointsObject.start; p.loopEnd = loopPointsObject.end; p.start();
+}
+
+
+m.rhythms.rhythm1 = [0].concat(low2HighSort(numArray(0,32).map(x => Math.random()).map(x => x * 16)))
+m.rhythms.rhythm2 = [0]
+
+//--------------------------------------------------------------------------
+// sequences, probably to be merged into the m object above
+
+sequence1 = {triggered: 0}
+
+//--------------------------------------------------------------------------
+// initiate storage of vocabulary
+// and populate it with initial data
+
+// let vocabulary = {
+//     "filling the void": {
+//         "tone": 
+//             ((time, value) => { m.synths.synth01.triggerAttackRelease(pick(m.motifs.riffA), "8n", time, value.velocity); 
+//             console.log("dancer1:",time)
+//             })
+//         , "DOM": undefined
+//     }
+// }
+
+// vocabulary["filling the void"].DOM =
+//       ((time,value) => { Tone.Draw.schedule(() => { 
+//           console.log("dancer2:", Tone.Transport.position); 
+//           document.getElementById("content").innerText = `dancer2 running its vocabulary, transport position ${Tone.Transport.position}`;
+//           document.getElementById("content").style.color = value.args[0];
+//           //document.getElementById("content").style.color = pick(testColors)[0]
+//           }, time);
+//       })
+
+
+// vocabulary["sequence"] = {}
+// vocabulary["sequence"].DOM =
+//       ((time,value) => { Tone.Draw.schedule(() => { 
+//            console.log("dancer6 ran at " + Tone.Transport.position);
+//    trigger = (sequence1.triggered)%4;
+//    sequence1.triggered = trigger + 1
+//    // starting dancers needs to be thought more;
+//    // dancers should start after button is clicked;
+//    // changeRhythmAndArgs + changeVocab from all dancers go here;
+//    // phase 01
+//    if (trigger == 0) {
+//     p.dancers.dancer2.part.start(inNMeasures(2))
+//    }
+//    // phase 02
+//     else if (trigger == 1) {
+//     console.log("second trigger")
+//     }
+//     // phase 03
+//     else if (trigger == 2) {
+//     console.log("third trigger")
+//     }
+//     // phase 04
+//     else if (trigger == 3) {
+//     p.dancers.dancer2.part.stop(inNMeasures(2))
+//     }
+//     else {
+//     console.log("this should never run")
+//     }
+//           }, time);
+//       })
+
+// // use this to see all of the registered vocabulary
+
+// Object.keys(vocabulary)
+
+//--------------------------------------------------------------------------
+// generate this performance
+
+p = new Performance();
+p.newdancer('dancer1')
+p.newdancer('dancer2')
+p.newdancer('dancer3')
+p.newdancer('dancer4')
+p.newdancer('dancer5')
+p.newdancer('dancer6')
+
+p.dancerNames()
+
+//--------------------------------------------------------------------------
+// dancer1
+
+// p.dancers.dancer1.rhythm = m.rhythms.rhythm1.slice() 
+// p.dancers.dancer1.part = new Tone.Part(
+//     ((time, value) => { m.synths.synth03.triggerAttackRelease(pick(m.motifs.riffC), "8n", time, value.velocity); console.log("dancer1:",Tone.Transport.position) })
+//     , beatsToEvents(p.dancers.dancer1.rhythm)
+// )
+// p.dancers.dancer1.part.loop = true;
+// p.dancers.dancer1.part.loopEnd = "2m";
+// p.dancers.dancer1.part.probability = 0.7
+
+//--------------------------------------------------------------------------
+// dancer2
+
+// p.dancers.dancer2.rhythm = m.rhythms.rhythm1.slice() 
+// p.dancers.dancer2.part = new Tone.Part(
+// ((time) => { console.log("dancer2:",Tone.Transport.position)})
+// , beatsToEvents(p.dancers.dancer2.rhythm)
+// )
+// p.dancers.dancer2.part.loop = true;
+// p.dancers.dancer2.part.loopEnd = "2m";
+
+// notice that the callback is taken from the vocabulary
+
+// let testColors = [["blue"],["red"],["black"]]
+// changeRhythmAndArgs("dancer2",[0,1,2,3,4,5,6,7], testColors)
+// p.dancers.dancer2.part.callback = vocabulary["filling the void"].DOM
+
+//--------------------------------------------------------------------------
+// dancer3
+
+// p.dancers.dancer3.rhythm = m.rhythms.rhythm1.slice() 
+// p.dancers.dancer3.part = new Tone.Part(
+//     ((time, value) => { m.synths.synth02.triggerAttackRelease(pick(m.motifs.riffB), "8n", time, value.velocity); console.log("dancer3:", Tone.Transport.position) })
+//     , beatsToEvents(p.dancers.dancer3.rhythm)
+// )
+// p.dancers.dancer3.part.loop = true;
+// p.dancers.dancer3.part.loopEnd = "2m";
+
+//--------------------------------------------------------------------------
+// dancer4
+
+// p.dancers.dancer4.rhythm = m.rhythms.rhythm2.slice() 
+// p.dancers.dancer4.part = new Tone.Part(
+//     ((time) => { 
+//         targetDancer = pick( (Object.keys(p.dancers)).filter(x => x !="dancer4"));
+//         partToggle(p.dancers[targetDancer].part);
+//         console.log("dancer4 has toggled " + targetDancer + ":", Tone.Transport.position) 
+//     })
+//     , beatsToEvents(p.dancers.dancer4.rhythm)
+// )
+// p.dancers.dancer4.part.loop = true;
+// p.dancers.dancer4.part.loopEnd = "2m";
+
+//--------------------------------------------------------------------------
+// dancer5
+
+// p.dancers.dancer5.rhythm = m.rhythms.rhythm2.slice() 
+// p.dancers.dancer5.part = new Tone.Part(
+//     ((time) => { 
+//         randomLoopPoints (m.synths.player1, 0.3, 2.5); 
+//         console.log("dancer5 has changed the loop at:", Tone.Transport.position) 
+//     })
+//     , beatsToEvents(p.dancers.dancer4.rhythm)
+// )
+// p.dancers.dancer5.part.loop = true;
+// p.dancers.dancer5.part.loopEnd = "4m";
+
+// //--------------------------------------------------------------------------
+// // dancer6
+
+// p.dancers.dancer6.rhythm = m.rhythms.rhythm2.slice() 
+// p.dancers.dancer6.part = new Tone.Part(
+//     ((time) => { 
+//         randomLoopPoints (m.synths.player1, 0.3, 2.5); 
+//         console.log("dancer6 has changed the loop at:", Tone.Transport.position) 
+//     })
+//     , beatsToEvents(p.dancers.dancer6.rhythm)
+// )
+// p.dancers.dancer6.part.loop = true;
+// p.dancers.dancer6.part.loopEnd = "32m"; // was 8 for testing;
+
+// p.dancers.dancer6.part.callback = vocabulary["sequence"].DOM
+
+
+//--------------------------------------------------------------------------
+// bind the interface
+
+document.getElementById("b1").addEventListener("click", () => {console.log("Tone started");Tone.start()});
+document.getElementById("b2").addEventListener("click", () => {console.log("starting dancers and player");Tone.Transport.start()
+    p.dancers.dancer1.part.start(inNMeasures(3));
+    m.synths.player1.start(inNMeasures(5));
+    p.dancers.dancer5.part.start(inNMeasures(6))
+});
+document.getElementById("b3").addEventListener("click", () => Tone.Transport.stop());
+
+
+
+
+//-------------------------------------------------------------------------- CODE FOR IFRAME AND TEXT ARRAY
+//--------------------------------------------------------------------------
+// — CIRCULATING —
+// text array
+
+	var delay="10"; 
+	var count='0';
+	var Texts=new Array();
+	Texts[0]="I dreamed that I was balancing on the edge of a pit.";
+	Texts[1]="In my dancing I was balancing from orbit to orbit.";
+	Texts[2]="Or, rather, in decentering, dissolving the - us.";
+	Texts[3]="Expanding the void.";
+	Texts[4]="I dreamed that I was balancing in the edge of..";
+	Texts[5]="What if it takes sensing the abyss? The edges of the limits of..";
+	Texts[6]="..the limits of inclusion and exclusion,..";
+	Texts[7]="before the binary of inside — outside, inclusion — exclusion.";
+	Texts[8]="The private circle; the public sphere.";
+	Texts[9]="Spherical. Cyclical. Circulation of affects.";
+	Texts[10]="Vicious circle. Cut the circuit.";
+	Texts[11]="When I awoke it seemed that I could have simply lowered my centre of balance.";
+	Texts[12]="...my centre of — balance.";
+	Texts[13]="I dreamed that I was balancing on the edge of a...";
+	Texts[14]="Sonhei que estava a equilibrar-me no limite de um poço.";
+	Texts[15]="Na minha dança eu estava a balançar de órbita em órbita.";
+	Texts[16]="E se for preciso sentir o abismo, as margens dos limites...";
+	Texts[17]="os limites da inclusão - exclusão - antes do binário de dentro - fora, inclusão - exclusão.";
+	Texts[18]="O círculo privado e a esfera pública.";
+	Texts[19]="Esférica. Cíclico. Circulação de afectos.";
+	Texts[20]="Círculo vicioso. Cortar o circuito.";
+	Texts[21]="Quando acordei, parecia que podia simplesmente ter baixado o meu centro de equilíbrio";
+	Texts[22]="Circular, correr de boca em boca.";
+	Texts[23]="Correr de boca em boca";
+	Texts[24]="Que volta ao ponto de que partiu."
+
+	function circulating(){
+	        document.querySelector('#text').innerHTML = Texts[count]; 
+	        count++;
+	        if(count==Texts.length){count='0';}
+	        setTimeout("circulating()",delay*800);
+
+	        console.log('dancer 03: circulating ()   \n  \n ');
+	} 
+
+	// — ORBITING —
+	// array iframe
+
+	var dance = new Array(
+	  "https://en.wikipedia.org/wiki/Portal:Current_events",
+	  "https://en.wikipedia.org/wiki/Wikipedia:Contents/Glossaries",
+	  "https://pt.wikipedia.org/wiki/Esfera",
+	  "https://commons.wikimedia.org/w/index.php?search=sphere&title=Special%3ASearch&go=Go&ns0=1&ns6=1&ns12=1&ns14=1&ns100=1&ns106=1",
+	  "https://en.wikipedia.org/w/index.php?title=Spinning_jenny&action=history",  
+	  "https://www.google.com/search?q=spinning&newwindow=1&tbm=nws&source=lnms&sa=X&ved=0ahUKEwiAita8783bAhWFTcAKHTfJCiMQ_AUIDSgE&biw=1275&bih=947&dpr=2", 
+	  "https://commons.wikimedia.org/w/index.php?search=circulating&title=Special:Search&profile=advanced&fulltext=1&advancedSearch-current=%7B%7D&ns0=1&ns6=1&ns12=1&ns14=1&ns100=1&ns106=1",
+	  "https://commons.wikimedia.org/wiki/Template:Potd/2021-02", 
+	  "https://pt.wikipedia.org/w/index.php?search=lua+fases&title=Especial%3APesquisar&go=Ir&ns0=1", 
+	  "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Geometry", 
+	  "https://pt.wikipedia.org/wiki/Circular_(desambigua%C3%A7%C3%A3o)",
+	  "https://commons.wikimedia.org/wiki/Sundials_in_a_systematic_overview",
+	    "https://en.wikipedia.org/wiki/Circulation", 
+	  "https://www.google.com/search?q=site:wikimedia.org+Circular&hl=en&btnG=Search+Images&tbm=isch",  
+	  "https://www.google.com/search?num=50&newwindow=1&biw=1674&bih=813&sxsrf=ALeKk03auC1L_8KJ8gs2__ZwgUJhbhoqkQ%3A1610385866984&ei=yon8X8fMO4SUr7wPyKW-2AU&q=c%C3%ADclico&oq=c%C3%ADclico&gs_lcp=CgZwc3ktYWIQAzIICAAQyQMQywEyBQgAEMsBMgUIABDLATICCAAyBQgAEMsBMgUIABDLATIFCAAQywEyCwguEMcBEK8BEMsBMgUIABDLATIFCAAQywE6BAgAEEc6BAgjECc6BAgAEEM6CggAELEDEIMBEEM6CwguELEDEMcBEKMCOggIABCxAxCDAToFCAAQyQM6AgguOgQIABAKOgQILhAKOgoIABDJAxBGEPkBOggILhDHARCvAToICC4QyQMQkwJQsswDWN3aA2Dv2wNoAHAEeACAAWKIAb0EkgEBOJgBAKABAaoBB2d3cy13aXrIAQjAAQE&sclient=psy-ab&ved=0ahUKEwjH2bXsspTuAhUEyosBHciSD1sQ4dUDCA0&uact=5",
+	  "https://pageviews.toolforge.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&range=latest-20&pages=Language",
+	  "https://upload.wikimedia.org/wikipedia/commons/7/7a/Equation_of_time.svg",
+	  "https://para.toolforge.org/Commons:Special:NewFiles",
+	  "https://www.wikidata.org/wiki/Q49015"
+	);
+
+	function from_orbit_to_orbit() {
+	  danceIndex = 0;
+	  idInterval = 0;
+	  noOrbit = setInterval(function() {
+	    danceIndex = (danceIndex + 1) % dance.length;
+	    document.getElementById("stage01").src = dance[danceIndex];
+	  },15000);
+	  console.log('dancer 01: from_orbit_to_orbit ()   \n  \n ');
+	}
+
+	function no_orbit (){
+	      clearInterval(noOrbit);
+	      console.log('no_orbit ()  \n  \n ');
+	}
+
+	</script>
+
+
+	<script src="jo-functions.js"></script>
+
+</body>
+</html>
+
