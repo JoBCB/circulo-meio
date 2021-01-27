@@ -2,6 +2,7 @@
 x = document.querySelector(".stage01");
 y = document.querySelector(".stage02");
 z = document.querySelector(".stage03");
+h = document.querySelector("html");
 
 let vocabulary = {
     "filling the void": {
@@ -52,6 +53,7 @@ vocabulary["vicious_circle"].DOM =
          }, time);
 
      })
+
 // PUBLIC PRIVATE
 vocabulary["public or private"] = {}
 vocabulary["public or private"].DOM =
@@ -187,7 +189,7 @@ vocabulary["sequence"].DOM =
     p.dancers.dancer4.part.start(inNMeasures(2))
     p.dancers.dancer5.part.start(inNMeasures(2))
     // DANCER 01
-    changeRhythmAndArgs("dancer1",[0,5,14,17,31], [["0.5", "3"],["0.9", "1"],["1", "0.5"],["0.4", "1"]])
+    changeRhythmAndArgs("dancer1",[0,5,14,17,31], [["0.5", "3"],["0.9", "1"],["0.05", "1"],["1", "0.5"],["0.25", "1"]])
     changeVocab("dancer1", vocabulary["breathing"].DOM)
     // DANCER 02
     changeRhythmAndArgs("dancer2",[0,1,8,11], [["0.5", "2"],["0.7", "1"]])
@@ -223,7 +225,7 @@ vocabulary["sequence"].DOM =
     else if (trigger == 2) {
     console.log("third trigger")
     // DANCER 01
-    changeRhythmAndArgs("dancer1",[0,14,31], [["0.5", "3"],["0.9", "1"]])
+    changeRhythmAndArgs("dancer1",[0,14,31], [["0.5", "3"],["0.1", "2"],["0.9", "1"]])
     changeVocab("dancer1", vocabulary["breathing"].DOM)
     // DANCER 02
     changeRhythmAndArgs("dancer2",[0,1,8,10,12,15], [[]])
@@ -240,7 +242,7 @@ vocabulary["sequence"].DOM =
     }
     else if (trigger == 3) {
     // DANCER 01
-    changeRhythmAndArgs("dancer1",[0,3,10,12,25,30], [[]])
+    changeRhythmAndArgs("dancer1",[0], [[]])
     changeVocab("dancer1", vocabulary["vicious_circle"].DOM)
     // DANCER 02
     changeRhythmAndArgs("dancer2",[0,1,8,11], [[]])

@@ -53,6 +53,7 @@ body{
 .stage01 {
   margin-top: 0px;
   filter: grayscale(100%);
+  box-shadow: -20px 2px 20px #eee;
 }
 #text {
     font-size: 8vw;
@@ -127,7 +128,7 @@ body{
 }
 
 .triangle {
-	z-index: 99;
+	 z-index: 99;
     position: absolute;
     left: 0;
     top: 0;
@@ -249,6 +250,42 @@ body{
   -webkit-animation: one 60s infinite;   
 }
 
+.phase01::after {
+    content: "Dancer 05 moves to phase 01";
+    background-color: #000;
+    color: #FFF;
+    font-size: 1.25rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: 50%; right: 50%;
+    transform: translate(50%,-50%);
+    margin: 1rem;
+    padding: 0.5rem;
+    line-height: 1rem;
+    z-index: 999 !important;
+    box-shadow: 5px 5px 20px #323232;
+    animation: trans 8s forwards;
+    -webkit-animation: trans 8s forwards; 
+    animation-iteration-count: 1;
+}
+
+@keyframes trans {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-webkit-keyframes trans {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 .nophase01{
   animation: none; 
   -webkit-animation: none; 
@@ -302,6 +339,41 @@ body{
 .phase02 {
   animation: two 60s infinite; 
     -webkit-animation: two 60s infinite; 
+}
+
+.phase02 > body::after {
+    content: "Dancer 05 moves to phase 02";
+    background-color: #000;
+    color: #FFF;
+    font-size: 1.25rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: 50%; right: 50%;
+    transform: translate(50%,-50%);
+    margin: 1rem;
+    padding: 0.5rem;
+    line-height: 1rem;
+    z-index: 999 !important;
+    box-shadow: 5px 5px 20px #323232;
+    animation: transtwo 8s forwards;
+    -webkit-animation: transtwo 8s forwards; 
+    animation-iteration-count: 1;
+}
+@keyframes transtwo {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-webkit-keyframes transtwo {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
 }
 .nophase02 {
   animation: none; 
@@ -361,8 +433,42 @@ body{
 }
 
 .phase03 {
-  animation: three 30s infinite; 
+    animation: three 30s infinite; 
     -webkit-animation: three 30s infinite; 
+}
+.phase03 > body::after {
+    content: "Dancer 05 moves to phase 03";
+    background-color: #000;
+    color: #FFF;
+    font-size: 1.25rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: 50%; right: 50%;
+    transform: translate(50%,-50%);
+    margin: 1rem;
+    padding: 0.5rem;
+    line-height: 1rem;
+    z-index: 999 !important;
+    box-shadow: 5px 5px 20px #323232;
+    animation: transthree 8s forwards;
+    -webkit-animation: transthree 8s forwards; 
+    animation-iteration-count: 1;
+}
+@keyframes transthree {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-webkit-keyframes transthree {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
 }
 .nophase03 {
   animation: none; 
@@ -413,7 +519,42 @@ body{
 
 .phase04 {
   animation: four 30s infinite; 
-    -webkit-animation: four 30s infinite; 
+  -webkit-animation: four 30s infinite; 
+}
+
+.phase04 > body::after {
+    content: "Dancer 05 moves to phase 04";
+    background-color: #000;
+    color: #FFF;
+    font-size: 1.25rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: 50%; right: 50%;
+    transform: translate(50%,-50%);
+    margin: 1rem;
+    padding: 0.5rem;
+    line-height: 1rem;
+    z-index: 999 !important;
+    box-shadow: 5px 5px 20px #323232;
+    animation: transfour 8s forwards;
+    -webkit-animation: transfour 8s forwards;
+    animation-iteration-count: 1;
+}
+@keyframes transfour {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-webkit-keyframes transfour {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
 }
 .nophase04 {
   animation: none; 
@@ -429,7 +570,7 @@ body{
             background-size: 100% 100%;}
       20%   { background: radial-gradient(ellipse at top, #fddddd, #eee 100%, #fddddd);
               background-size: 10% 10%; }
-      22%   { background: background: radial-gradient(ellipse at top,  #eee, #eee 10%, #fddddd 10%);
+      22%   { background: radial-gradient(ellipse at top,  #eee, #eee 10%, #fddddd 10%);
             background-size: 100% 10%;}
       26%   { background: radial-gradient(ellipse at top, #eee, #fddddd 10%, #eee 10%);
               background-size: 100% 10%;}
@@ -460,7 +601,7 @@ body{
             background-size: 100% 100%;}
       20%   { background: radial-gradient(ellipse at top, #fddddd, #eee 100%, #fddddd);
               background-size: 10% 10%; }
-      22%   { background: background: radial-gradient(ellipse at top,  #eee, #eee 10%, #fddddd 10%);
+      22%   { background:  radial-gradient(ellipse at top,  #eee, #eee 10%, #fddddd 10%);
             background-size: 100% 10%;}
       26%   { background: radial-gradient(ellipse at top, #eee, #fddddd 10%, #eee 10%);
               background-size: 100% 10%;}
