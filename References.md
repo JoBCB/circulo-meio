@@ -1,11 +1,24 @@
 ## Collection of References:
 
+### CONTEXTUAL ART RESEARCH
+
+* [Other Geometries by Femke Snelting](https://possiblebodies.constantvzw.org/geometries/othergeometries.pdf)
+* "Against the spectacle, the realized situationist culture introduces total participation." [Situationist International Manifesto](https://monoskop.org/images/4/4d/Bolt_Jakobsen_eds_Cosmonauts_of_the_Future_Texts_from_the_Situationist_Movement_in_Scandinavia_and_Elsewhere.pdf#page=25)
+* [Situationist Times Publication](https://monoskop.org/Situationist_Times)
+* [SPECTACLES OF DISINTEGRATION](https://monoskop.org/images/b/b3/Wark_McKenzie_50_Years_of_Recuperation_of_the_Situationist_International.pdf#page=21)
+* [Détournement](https://en.wikipedia.org/wiki/D%C3%A9tournement)
+* [Code Jamming](http://journal.media-culture.org.au/0612/03-brown.php)
+* [Culture Jamming](https://en.wikipedia.org/wiki/Culture_jamming)
+* [Media Activist Cookbook](https://monoskop.org/Media-activist_Cookbook)
+
 ### ON LANGUAGE
 
 * [List of Live Coding Languages](https://github.com/toplap/awesome-livecoding)
 * [Esoteric Programming](https://esoteric.codes/)
 * [Kate Sicchio on Choreographic Languages](http://blog.sicchio.com/works/sound-choreographer-body-code/)
 * [Yvonne Rainer Choreography](https://www.fondation-langlois.org/9evenings/e/yvonne-rainer/index.html)
+* [Anne Bogart and Tina Landau: Viewpoints](https://stilluntitledproject.files.wordpress.com/2014/11/anne-bogart-and-tina-landau-the-viewpoints-book.pdf)
+
 
 _Examples of Glossaries_
 
@@ -33,15 +46,3 @@ _Live Coding Environments:_
 * [Estuary a polyglot collaborative server-based online environment for live coding](https://github.com/dktr0/estuary]
 * [TYPE  a collaborative live coding interface](https://typeensemble.wordpress.com/)
 * [Marije Baalman on live coding Tools with focus on gesture ](https://marijebaalman.eu/projects/code-livecode-live.html)
-
-### FURTHER CONTEXTUAL ART RESEARCH
-
-_Art Movements_
-
-* [Code Jamming](http://journal.media-culture.org.au/0612/03-brown.php)
-* [Détournement](https://en.wikipedia.org/wiki/D%C3%A9tournement)
-* "Against the spectacle, the realized situationist culture introduces total participation." [Situationist International Manifesto](https://monoskop.org/images/4/4d/Bolt_Jakobsen_eds_Cosmonauts_of_the_Future_Texts_from_the_Situationist_Movement_in_Scandinavia_and_Elsewhere.pdf#page=25)
-* [Publications](https://monoskop.org/Situationist_Times)
-* [SPECTACLES OF DISINTEGRATION](https://monoskop.org/images/b/b3/Wark_McKenzie_50_Years_of_Recuperation_of_the_Situationist_International.pdf#page=21)
-* [Culture Jamming](https://en.wikipedia.org/wiki/Culture_jamming)
-* [Media Activist Cookbook](https://monoskop.org/Media-activist_Cookbook)
